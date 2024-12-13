@@ -1,0 +1,118 @@
+body{
+    margin: 0%;
+}
+
+.parte_arriba{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.parte_arriba img{
+    width: 20%;
+}
+.parte_abajo{
+    background-color: rgb(243, 243, 243);
+    border-top: 3px solid yellow;
+}
+
+.texto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.texto1{
+    color: rgb(48, 48, 255);
+    background-color: rgb(167, 167, 167);
+    padding: 0.5%; 
+}
+
+.texto2{
+    color: gray;
+    background-color: blue;
+    padding: 0.5%;
+}
+
+.selector{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 1%;
+    margin-top: 5%;
+
+}
+
+.selector p{
+    color: blue;
+    padding: 1%;
+}
+
+.texto3{
+    color: blue;
+    background-color: white;
+    padding: 0.5%;
+}
+
+.texto4 p{
+    color: white;
+    background-color: blue;
+    padding: 20%; 
+    width: 100%;
+}
+
+.lista_peliculas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    
+    
+}
+.peliculas{
+    padding: 1%;
+    background-color: white;
+    color: blue;
+    height: 70%;
+}
+
+.pelicula_img {
+    width: 45%;
+    height: 45%;
+}
+
+.estrellas1 p{
+    color:black ;
+    font-size: 45%;
+}
+
+.estrellas2 p{
+    color:black ;
+    font-size: 45%;  
+}
+
+.estrellas3 p{
+    color:black ;
+    font-size: 45%;
+    
+}
+
+.estrellas4 p{
+    color:black ;
+    font-size: 45%;
+    
+}
+
+.estrellas5 p{
+    color:black ;
+    font-size: 45%;
+}
+
+.compartir img{
+    width: 2%;
+    height: 2%;
+}

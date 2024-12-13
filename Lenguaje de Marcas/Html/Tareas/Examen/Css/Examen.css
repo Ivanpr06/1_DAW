@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+}
+
+.parte_arriba{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #c7c3c3;
+    color: black;
+    align-items: center;
+    padding: 3%;
+}
+
+.parte_arriba img{
+    width: 5%;
+    height: 20%;
+}
+
+.boton1{
+    background-color:yellow;
+    padding: 1%;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.parte_abajo{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.lateral{
+    background-color: #d9e9ff;
+    text-align: center;
+    width: 20%;
+}
+
+.opciones{
+    text-align: center;
+    margin-top: 300px;
+}
+
+.opciones img{
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 20%;
+    height: 20%;
+}
+
+.parte_centro{
+    width: 60%;
+}
+
+.tarjeta1{
+    background-image:url(../Imagenes/imagenfondomusica.jpg); 
+    padding: 2%;
+    color: azure;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.boton2{
+    padding: 1%;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left:20% ;
+    margin-right:20% ;
+    color: black;
+    background-color: bisque;
+}
+.tarjeta2{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.imagenes{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagenes img{
+    width: 20%;
+    height: 20%;
+    margin-top: 3%;
+    border-radius: 20px;
+}
+
+.tarjeta3{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.tarjeta3 li{
+    list-style: none;
+}
+
+.tarjeta4{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.formulario input{
+    border-radius: 5px;
+}

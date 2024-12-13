@@ -1,0 +1,93 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("file:///C:/Users/damda/Downloads/background%20(2).svg");
+    background-repeat: repeat;
+    animation: fondo 35s linear infinite; 
+
+}
+
+@keyframes fondo {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -100% -100%;
+    }
+}
+
+
+
+#marco{
+    border: 6px;
+    border-color: purple;
+    border-style:solid;
+    border-radius: 25px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    text-align: center;
+
+}
+
+#marco p{
+    text-align: left;
+    display: flex;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    justify-content: space-between;
+
+
+}
+
+.espacios1{
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.espacios2{
+    margin-top: 10px;
+    margin-left: 75px;
+    
+}
+
+
+.comentario textarea{
+    align-items:center;
+    width: 700px;
+    height: 100px;
+    border-radius: 10px;
+
+}
+
+
+.botones{
+    display: flex;
+    
+}
+
+.boton1 input{
+    border: none;
+    border-style:solid;
+    border-radius: 15px;
+    background-color: blue;
+    width: 300px;
+    padding: 10px;
+    color: white;
+    justify-content: space-between;
+
+}
+
+.boton2 input{
+    border: none;
+    border-style:solid;
+    border-radius: 15px;
+    background-color: red;
+    width: 300px;
+    padding: 10px;
+    color: white;
+    margin-left: 100px;
+
+}

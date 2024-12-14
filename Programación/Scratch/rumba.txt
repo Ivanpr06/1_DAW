@@ -1,8 +1,0 @@
-					RUMBA
-1. Pulsar boton
-2. Encender
-2. detectar Mapa de habitaciones
-3. Entra habitación uno
-4. Detecta objeto por el mapa
-5. Por el sensor detecta obstaculo 
-6. 

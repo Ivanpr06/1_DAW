@@ -1,18 +1,19 @@
 # 📖 1_DAW
-<p>In this folder, you will find my first projects on my journey to becoming a professional programmer, studying in Safa Reyes's education cycle.</p>
+<p>In this folder, you will find my first projects on my journey to becoming a professional programmer, studying in Safa Reyes's education cycle 🎓</p>
 
-## 🗂️ Folders
+## 🗃️ Folders
 <p>Here, I will explain how this repository will be structured:</p>
   <ul>
       <li><h4>📂 Lenguajes de Marcas</h4>
-      <p>In this folder, you can find some code written in <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>. Moreover, I have had the opportunity to learn about tools like <b>Visual Studio Code</b> and 
-      <b>Bootstrap</b> ⚙️</p>
+      <p>In Lenguajes de Marcas, you can find some code written in <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>. Moreover, I have had the opportunity to learn about tools like <b>Visual Studio Code</b> and 
+      <b>Bootstrap</b> 📱</p>
       </li>
       <li><h4>📂 Programación</h4>
-      <p>In this folder, you can find some code written in <b>Python</b> and <b>Java</b>, combined with other tools like <b>MySQL</b> and <b>Qt Designer</b> 📟</p>
+      <p>In Programación, you can find some code written in <b>Python</b> and <b>Java</b>, combined with other tools like <b>MySQL</b> and <b>Qt Designer</b> 📟</p>
       </li>
       <li><h4>📂 Entorno de Desarrollo</h4>
-      <p></p>
+      <p>In Entorno de Desarrollo, you can find some Pseint code as an introduction to Python, as well as some projects in this language that are more specific to solving problems and learning how to use the 
+      debugger effectively. Meanwhile, there are also other exercises on UML and how to use it correctly. ⚙️</p>
       </li>
   </ul>
 

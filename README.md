@@ -13,7 +13,7 @@
       </li>
       <li><h4>📂 Entorno de Desarrollo</h4>
       <p>In Entorno de Desarrollo, you can find some <b>Pseint</b> code as an introduction to <b>Python</b>, as well as some projects in this language that are more specific to solving problems and learning 
-      how to use the debugger effectively. Meanwhile, there are also other exercises on <b>UML</b> and how to use it correctly. ⚙️</p>
+      how to use the debugger effectively 🔴. Meanwhile, there are also other exercises on <b>UML</b> and how to use it correctly. ⚙️</p>
       </li>
       <li><h4>📂 Base de Datos</h4></li>
       <li><h4>📂 IP</h4></li>

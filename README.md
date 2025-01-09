@@ -16,13 +16,13 @@
       how to use the debugger effectively 🔴. Meanwhile, there are also other exercises on <b>UML</b> and how to use it correctly. ⚙️</p>
       </li>
       <li><h4>📂 Base de Datos</h4>
-      <p>In Base de Datos, you can find some code written in <b>MySQL</b> to create a database. Previously, we learned how to do this by designing an E/R Diagram and a Relational Model using <b>Draw.io</b>.</p>
+      <p>In Base de Datos, you can find some code written in <b>MySQL</b> to create a database. Previously, we learned how to do this by designing an E/R Diagram and a Relational Model using <b>Draw.io</b>. 📊</p>
       </li>
       <li><h4>📂 IP</h4>
-      <p>In IP, you can find some information about workers' rights, the salaries they can earn, and more. This subject is more theoretical, so it is not very relevant to programming.</p>
+      <p>In IP, you can find some information about workers' rights, the salaries they can earn, and more. This subject is more theoretical, so it is not very relevant to programming. 👨‍🔧</p>
       </li>
       <li><h4>📂 Sistemas Informáticos</h4>
-      <p>In Sistemas Informáticos, you can find varied information about many aspects of programming, such as Ubuntu, binary code, and the components of a PC.</p>
+      <p>In Sistemas Informáticos, you can find varied information about many aspects of programming, such as Ubuntu, binary code, and the components of a PC. 🖥</p>
       </li>
   </ul>
   

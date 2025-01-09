@@ -15,7 +15,9 @@
       <p>In Entorno de Desarrollo, you can find some <b>Pseint</b> code as an introduction to <b>Python</b>, as well as some projects in this language that are more specific to solving problems and learning 
       how to use the debugger effectively 🔴. Meanwhile, there are also other exercises on <b>UML</b> and how to use it correctly. ⚙️</p>
       </li>
-      <li><h4>📂 Base de Datos</h4></li>
+      <li><h4>📂 Base de Datos</h4>
+      <p>Im Base de Datos, you can find some code wriiten in <b>MySql</b> to made some data base, previously we learn how to do this by making some design in <b>Draw.io</b> to make some </p>
+      </li>
       <li><h4>📂 IP</h4></li>
       <li><h4>📂 Sistemas Informáticos</h4></li>
   </ul>

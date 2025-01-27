@@ -20,7 +20,7 @@ nav{
 .imagenes_barra{
     display: flex;
     flex-wrap: nowrap;
-    margin-right: 20%;
+    margin-right: 10%;
 }
 
 .imagenes_barra img{
@@ -90,10 +90,14 @@ h3{
     background-color:rgba(6, 26, 56, 0.781);
     text-align: center;
     color: rgba(6, 26, 56, 0.781);
+    scrollspy-example { 
+        max-height: 400px;
+        overflow-y: auto; 
+      }
 }
 
 .texto h2{
-    color: rgba(6, 26, 56, 0.781);
+    color: whitesmoke;
 }
 
 

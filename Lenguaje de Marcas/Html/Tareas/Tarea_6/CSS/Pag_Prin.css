@@ -54,6 +54,10 @@ h3{
     color: whitesmoke;
 }
 
+.carusel{
+    max-height: 1000px;
+}
+
 .titulo{
     background-color: rgba(6, 26, 56, 0.781);
     color: whitesmoke;
@@ -84,12 +88,15 @@ h3{
     background-color:rgba(6, 26, 56, 0.781);
     text-align: center;
     color: rgba(6, 26, 56, 0.781);
+    scrollspy-example { 
+        max-height: 400px;
+        overflow-y: auto; 
+      }
 }
 
 .texto h2{
-    color: rgba(6, 26, 56, 0.781);
+    color: whitesmoke;
 }
-
 
 .botones{
     padding: 1%;
@@ -104,4 +111,8 @@ h3{
     justify-content: space-around;
     text-align: center;
     padding: 3%;
+}
+
+.final img{
+    cursor: pointer;
 }

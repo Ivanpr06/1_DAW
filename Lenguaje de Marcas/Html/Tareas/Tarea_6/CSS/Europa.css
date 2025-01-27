@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: nowrap !important;
+}
+
+.barra{
+    background-color:rgba(6, 26, 56, 0.781);
+}
+.barra img{
+    margin-left: 5%;
+    width: 100px;
+}
+
+.imagenes_barra{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 10%;
+}
+
+.imagenes_barra img{
+    width: 40px;
+    margin-left: 20%;
+}
+
+.titulo{
+    display: flex;
+    align-items:end;
+    color:rgba(6, 26, 56, 0.781);
+}
+

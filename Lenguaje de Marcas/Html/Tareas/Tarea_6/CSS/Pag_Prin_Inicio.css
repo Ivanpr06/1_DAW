@@ -115,3 +115,7 @@ h3{
     text-align: center;
     padding: 3%;
 }
+
+.final img{
+    cursor: pointer;
+}

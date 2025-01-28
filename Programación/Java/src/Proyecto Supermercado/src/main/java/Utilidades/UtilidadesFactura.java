@@ -16,7 +16,7 @@ public class UtilidadesFactura {
     }
 
     public double calcularBaseFactura(Factura factura){
-        Double base_importe = 0.00;
+        double base_importe = 0.00;
         for(LineaFactura producto: factura.getLineaFactura()){
             Double precio =  producto.getProducto().getPrecio();
             Integer cantidad = producto.getCantidad();
@@ -26,7 +26,7 @@ public class UtilidadesFactura {
     }
 
     public double  calcularTotalAPagar(Factura factura){
-        Double totalAPagar = (factura.getImporteBase() - factura.getDescuento()) * factura.getIva();
+        double totalAPagar = (factura.getImporteBase() - factura.getDescuento()) * factura.getIva();
         return totalAPagar;
     }
 }

@@ -6,7 +6,7 @@ public class UtilidadesCliente {
 
     public boolean  esDniValido(Cliente cliente){
         if (cliente.getDni().length() == 9){
-            Integer contador = 1;
+            int contador = 1;
             for (char caracter : cliente.getDni().toCharArray()){
                 if (!Character.isDigit(caracter) && contador <= 8){
                     return false;

@@ -2,26 +2,29 @@ package Modelos;
 
 import java.util.Objects;
 
-public class Cliente {
+public class Empleado {
 
     Integer identificador;
     String dni;
     String nombre;
     String apellidos;
     String direccion;
-    TipoCliente tipoCliente;
+    String numTelefono;
+    Empresa empresa;
+    Contrato contrato;
 
-    // Constructor
-    public Cliente() {
+    public Empleado() {
     }
 
-    public Cliente(Integer identificador, String dni, String nombre, String apellidos, String direccion, TipoCliente tipoCliente) {
+    public Empleado(Integer identificador, String dni, String nombre, String apellidos, String direccion, String numTelefono, Empresa empresa, Contrato contrato) {
         this.identificador = identificador;
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.direccion = direccion;
-        this.tipoCliente = tipoCliente;
+        this.numTelefono = numTelefono;
+        this.empresa = empresa;
+        this.contrato = contrato;
     }
 
     public Integer getIdentificador() {
@@ -64,35 +67,55 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public TipoCliente getTipoCliente() {
-        return tipoCliente;
+    public String getNumTelefono() {
+        return numTelefono;
     }
 
-    public void setTipoCliente(TipoCliente tipoCliente) {
-        this.tipoCliente = tipoCliente;
+    public void setNumTelefono(String numTelefono) {
+        this.numTelefono = numTelefono;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public Contrato getContrato() {
+        return contrato;
+    }
+
+    public void setContrato(Contrato contrato) {
+        this.contrato = contrato;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "Empleado{" +
                 "identificador=" + identificador +
                 ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", direccion='" + direccion + '\'' +
-                ", tipoCliente=" + tipoCliente +
+                ", numTelefono='" + numTelefono + '\'' +
+                ", empresa=" + empresa +
+                ", contrato=" + contrato +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Cliente cliente = (Cliente) o;
-        return Objects.equals(identificador, cliente.identificador) && Objects.equals(dni, cliente.dni) && Objects.equals(nombre, cliente.nombre) && Objects.equals(apellidos, cliente.apellidos) && Objects.equals(direccion, cliente.direccion) && tipoCliente == cliente.tipoCliente;
+        Empleado empleado = (Empleado) o;
+        return Objects.equals(identificador, empleado.identificador) && Objects.equals(dni, empleado.dni) && Objects.equals(nombre, empleado.nombre) && Objects.equals(apellidos, empleado.apellidos) && Objects.equals(direccion, empleado.direccion) && Objects.equals(numTelefono, empleado.numTelefono) && Objects.equals(empresa, empleado.empresa) && Objects.equals(contrato, empleado.contrato);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(identificador, dni, nombre, apellidos, direccion, tipoCliente);
+        return Objects.hash(identificador, dni, nombre, apellidos, direccion, numTelefono, empresa, contrato);
     }
+
+
 }

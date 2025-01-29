@@ -1,5 +1,4 @@
 import Modelos.*;
-import Utilidades.UtilidadesAlmacen;
 import Utilidades.UtilidadesFactura;
 
 import java.time.LocalDate;
@@ -9,7 +8,7 @@ import java.util.List;
 import static Modelos.TipoCliente.PARTICULAR;
 import static Modelos.TipoProducto.ALIMENTACION;
 
-public class Prueba {
+public class Main {
 
     public static void main(String[] args) {
 

@@ -1,4 +1,5 @@
-*{
+html, body, main{
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -35,13 +36,18 @@ nav{
     margin-bottom: 2%;
 }
 
-.parte_media{
+.boton button{
+    display: flex;
+    gap: 10%;
+    border-radius: 15px !important;
+
+}
+
+.main{
     display: flex;
     flex-wrap: wrap;
     background-color: whitesmoke;
-    padding-top: 3%;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-left: 20%;
 }
 
 
@@ -52,5 +58,9 @@ nav{
 
 .boton img{
     width: 20px;
+}
+
+.hoteles{
+    max-height: 300px;
 }
 

@@ -24,7 +24,6 @@ public class Cliente extends Persona {
     }
 
 
-    @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
@@ -32,7 +31,6 @@ public class Cliente extends Persona {
         return tipoCliente == cliente.tipoCliente;
     }
 
-    @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), tipoCliente);
     }

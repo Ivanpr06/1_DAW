@@ -100,16 +100,16 @@ public class UtilidadesEmpresa {
 
     public Empleado contratarTrabajador(Empresa e, String dni, String nombre, String apellidos, String direccion, String telefono, TipoContrato tipo, Double salario){
         Cliente cliente = new Cliente();
+        Empleado empleado = new Empleado();
         cliente.setDni(dni);
         cliente.setNombre(nombre);
         cliente.setApellidos(apellidos);
         cliente.setDireccion(direccion);
-
-        Empleado empleado = new Empleado();
         empleado.setNumTelefono(telefono);
-
+        empleado.getContrato().setTipoContrato(tipo);
+        empleado.getContrato().setSalarioBase(salario);
+        return empleado;
     }
-
 
 
 }

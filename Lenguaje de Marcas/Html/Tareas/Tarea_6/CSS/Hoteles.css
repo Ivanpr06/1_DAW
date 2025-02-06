@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: nowrap !important;
+}
+
+.barra{
+    background-color:rgba(6, 26, 56, 0.781);
+}
+.barra img{
+    margin-left: 5%;
+    width: 100px;
+}
+
+.imagenes_barra{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 10%;
+    cursor: pointer;
+}
+
+.imagenes_barra img{
+    width: 30px;
+    margin-left: 20%;
+}
+
+.busqueda{
+    background-color: rgba(6, 26, 56, 0.781);
+}
+
+.foto_principal{
+    color: whitesmoke !important;
+}
+
+.fotos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fotos img{
+    width: 25%;
+}
+
+.titulo{
+    color: whitesmoke;
+    background-color:rgba(6, 26, 56, 0.781);
+    text-align: center;
+    padding: 1%;
+}
+
+.servicios{
+    background-color: rgba(6, 26, 56, 0.781);
+    color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 2%;
+}
+
+.servicios p{
+    border: solid 2px;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.servicios img{
+    width: 10%; 
+    margin-right: 10%;
+}
+
+.comentarios{
+    background-color:rgba(6, 26, 56, 0.781);
+    color: whitesmoke;
+    padding: 3%;
+}
+
+.comentario_prin{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 2%;
+    margin-top: -4%;
+}
+
+.comentario_prin h5{
+    border: solid 2px;
+    padding: 0.25%;
+    border-radius: 10px;
+}
+
+.comentario_prin p{
+    margin-top: 13px;
+}
+
+.barras{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 3%;
+}
+
+.barras p{
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+.comentarios button{
+    margin-left: 5%;
+}
+
+.precio{
+    background-color:rgba(6, 26, 56, 0.781);
+}
+
+.cartas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    padding: 2%;
+}
+
+.carta{
+    width: 360px !important;
+    margin-bottom: 5%;
+}
+
+.confirmar img{
+    width: 100px;
+}

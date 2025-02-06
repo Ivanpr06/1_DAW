@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    background-image: url("../Imágenes/fondo_montaña.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.parte_arriba{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    text-align: center;
+    
+}
+
+.bloque1{
+    font-size: small;
+    padding: 2%;
+    background-color: white;
+    width: 150px;
+    margin-bottom: 5%;
+
+}
+
+.parte_abajo{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;  
+    margin-top: 10%;  
+    width: 80%; 
+    margin-left: 20%;
+}
+
+.formulario{
+    color: white;
+    background-color: black;
+    padding: 1%;
+    width: 350px;
+}
+
+.formulario1{
+    display: flex;
+    align-items: center;
+    
+}
+
+.formulario input[type ="email"]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    outline: none;
+    width: 40%;
+    font-size: 50%;
+    margin-right: 3%;
+    
+}
+
+.formulario input[type ="name"]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    outline: none;
+    width: 40%;
+    height: 20%;
+    font-size: 50%;
+    margin-right: 3%;
+
+}
+
+.formulario textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    color: white;
+    outline: none;
+    width: 98%;
+    font-size: 80%;
+    margin-right: 3%;
+
+}
+
+.botones input{
+    height: 5%;
+    width: 98%;
+}
+
+.maps{
+    width: 350px;
+}
+.maps iframe{
+    width: 100%;
+}

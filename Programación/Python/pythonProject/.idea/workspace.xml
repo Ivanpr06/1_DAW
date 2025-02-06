@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bc040ec8-a8aa-4f96-bf23-8e71b3498020" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2mThODh22JcYXJmLdIVhRnlpIVN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1-10.executor&quot;: &quot;Run&quot;,
+    &quot;Python.1ºevaluación_2021.executor&quot;: &quot;Run&quot;,
+    &quot;Python.1ºevaluación_2022.executor&quot;: &quot;Run&quot;,
+    &quot;Python.25-09.executor&quot;: &quot;Run&quot;,
+    &quot;Python.30-09.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Adivina_número.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ahorcado.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ejercicio_Diccionario.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ejercicios_Condicionales.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ejercicios_cadena (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ejercicios_cadena.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ejercicios_exámen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ejercicios_filas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Examen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Examen_2024.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Palabras_encadenadas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Prueba.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Recuperación_2022.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Variable.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bingo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.diccionario.executor&quot;: &quot;Run&quot;,
+    &quot;Python.repaso_bucles.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tres_en_raya.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\damda\PycharmProjects\pythonProject\Ejercicios" />
+      <recent name="C:\Users\damda\PycharmProjects\pythonProject\Clases" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Examen_2024">
+    <configuration name="1ºevaluación_2021" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Examenes_Antiguos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Examenes_Antiguos/1ºevaluación_2021.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="1ºevaluación_2022" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Examenes_Antiguos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Examenes_Antiguos/1ºevaluación_2022.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Ejercicio_Diccionario" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ejercicios/Juegos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\damda\PycharmProjects\pythonProject\Ejercicios\Ejercicio_Diccionario.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Examen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Entorno" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Entorno/Examen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Examen_2024" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Examen_2024" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Examen_2024/Examen_2024.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Examen_2024" />
+        <item itemvalue="Python.1ºevaluación_2021" />
+        <item itemvalue="Python.1ºevaluación_2022" />
+        <item itemvalue="Python.Examen" />
+        <item itemvalue="Python.Ejercicio_Diccionario" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.19072.16" />
+        <option value="bundled-python-sdk-8336bb23522e-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.19072.16" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc040ec8-a8aa-4f96-bf23-8e71b3498020" name="Changes" comment="" />
+      <created>1727106439049</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727106439049</updated>
+      <workItem from="1727106442260" duration="89000" />
+      <workItem from="1727184850952" duration="20000" />
+      <workItem from="1727196248369" duration="8090000" />
+      <workItem from="1727269515163" duration="9477000" />
+      <workItem from="1727287202471" duration="2000" />
+      <workItem from="1727289122826" duration="2000" />
+      <workItem from="1727706178589" duration="5857000" />
+      <workItem from="1727801510958" duration="7139000" />
+      <workItem from="1728310096372" duration="6131000" />
+      <workItem from="1728395368316" duration="4000" />
+      <workItem from="1728402286843" duration="4000" />
+      <workItem from="1728405488172" duration="7407000" />
+      <workItem from="1728479090348" duration="7271000" />
+      <workItem from="1728492381804" duration="2000" />
+      <workItem from="1728493710119" duration="2000" />
+      <workItem from="1728495947928" duration="3000" />
+      <workItem from="1728496462092" duration="7000" />
+      <workItem from="1728497480605" duration="2000" />
+      <workItem from="1728565863133" duration="52000" />
+      <workItem from="1728565971954" duration="8000" />
+      <workItem from="1728916052801" duration="995000" />
+      <workItem from="1728917251030" duration="3533000" />
+      <workItem from="1729004788050" duration="3000" />
+      <workItem from="1729005210885" duration="4000" />
+      <workItem from="1729009986963" duration="8341000" />
+      <workItem from="1729087013043" duration="5465000" />
+      <workItem from="1729102371235" duration="3000" />
+      <workItem from="1729170114137" duration="1652000" />
+      <workItem from="1729171852213" duration="21000" />
+      <workItem from="1729171880477" duration="24000" />
+      <workItem from="1729171916032" duration="5000" />
+      <workItem from="1729176781299" duration="2931000" />
+      <workItem from="1729183106099" duration="4082000" />
+      <workItem from="1729519954660" duration="4594000" />
+      <workItem from="1729525619658" duration="70000" />
+      <workItem from="1729688314836" duration="2001000" />
+      <workItem from="1729692593646" duration="5290000" />
+      <workItem from="1730144661679" duration="46000" />
+      <workItem from="1730213773522" duration="4000" />
+      <workItem from="1730214554734" duration="755000" />
+      <workItem from="1730398159596" duration="2000" />
+      <workItem from="1730733249828" duration="1063000" />
+      <workItem from="1730829668306" duration="4000" />
+      <workItem from="1732197936491" duration="7220000" />
+      <workItem from="1732552258023" duration="18000" />
+      <workItem from="1732808471782" duration="31000" />
+      <workItem from="1733152989068" duration="4834000" />
+      <workItem from="1733161601246" duration="6015000" />
+      <workItem from="1733254370531" duration="2079000" />
+      <workItem from="1733321818524" duration="6621000" />
+      <workItem from="1733839645021" duration="147000" />
+      <workItem from="1733839811380" duration="2009000" />
+      <workItem from="1733846129625" duration="1139000" />
+      <workItem from="1733851985630" duration="6035000" />
+      <workItem from="1734358362582" duration="1369000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pythonProject$Recuperación_2022.coverage" NAME="Recuperación_2022 Coverage Results" MODIFIED="1733840951704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Examenes_Antiguos" />
+    <SUITE FILE_PATH="coverage/pythonProject$Ejercicios_Condicionales.coverage" NAME="Ejercicios_Condicionales Coverage Results" MODIFIED="1727706582878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
+    <SUITE FILE_PATH="coverage/pythonProject$Ahorcado.coverage" NAME="Ahorcado Coverage Results" MODIFIED="1728413592160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
+    <SUITE FILE_PATH="coverage/pythonProject$Examen_2024.coverage" NAME="Examen_2024 Coverage Results" MODIFIED="1734359346111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Examen_2024" />
+    <SUITE FILE_PATH="coverage/pythonProject$bingo.coverage" NAME="bingo Coverage Results" MODIFIED="1728311051839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clases" />
+    <SUITE FILE_PATH="coverage/pythonProject$1_10.coverage" NAME="1-10 Coverage Results" MODIFIED="1728487743729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clases" />
+    <SUITE FILE_PATH="coverage/pythonProject$Palabras_encadenadas.coverage" NAME="Palabras_encadenadas Coverage Results" MODIFIED="1729689671450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios/Juegos" />
+    <SUITE FILE_PATH="coverage/pythonProject$1ºevaluación_2022.coverage" NAME="1ºevaluación_2022 Coverage Results" MODIFIED="1733840945169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Examenes_Antiguos" />
+    <SUITE FILE_PATH="coverage/pythonProject$Ejercicios_cadena__1_.coverage" NAME="Ejercicios_cadena (1) Coverage Results" MODIFIED="1727712025163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
+    <SUITE FILE_PATH="coverage/pythonProject$repaso_bucles.coverage" NAME="repaso_bucles Coverage Results" MODIFIED="1728480592177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clases" />
+    <SUITE FILE_PATH="coverage/pythonProject$Variable.coverage" NAME="Variable Coverage Results" MODIFIED="1727199580029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Primera_clase" />
+    <SUITE FILE_PATH="coverage/pythonProject$Ejercicios_cadena.coverage" NAME="Ejercicios_cadena Coverage Results" MODIFIED="1727203281103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Primera_clase" />
+    <SUITE FILE_PATH="coverage/pythonProject$30_09.coverage" NAME="30-09 Coverage Results" MODIFIED="1727708566199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clases" />
+    <SUITE FILE_PATH="coverage/pythonProject$Examen.coverage" NAME="Examen Coverage Results" MODIFIED="1732207650201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Entorno" />
+    <SUITE FILE_PATH="coverage/pythonProject$Ejercicios_filas.coverage" NAME="Ejercicios_filas Coverage Results" MODIFIED="1728410372879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
+    <SUITE FILE_PATH="coverage/pythonProject$tres_en_raya.coverage" NAME="tres_en_raya Coverage Results" MODIFIED="1729689247607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios/Juegos" />
+    <SUITE FILE_PATH="coverage/pythonProject$25_09.coverage" NAME="25-09 Coverage Results" MODIFIED="1727272970032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clases" />
+    <SUITE FILE_PATH="coverage/pythonProject$Ejercicios_exámen.coverage" NAME="Ejercicios_exámen Coverage Results" MODIFIED="1728310166845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios" />
+    <SUITE FILE_PATH="coverage/pythonProject$diccionario.coverage" NAME="diccionario Coverage Results" MODIFIED="1733153763688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Clases" />
+    <SUITE FILE_PATH="coverage/pythonProject$1ºevaluación_2021.coverage" NAME="1ºevaluación_2021 Coverage Results" MODIFIED="1733852981557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Examenes_Antiguos" />
+    <SUITE FILE_PATH="coverage/pythonProject$Adivina_número.coverage" NAME="Adivina_número Coverage Results" MODIFIED="1729688639887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios/Juegos" />
+    <SUITE FILE_PATH="coverage/pythonProject$Prueba.coverage" NAME="Prueba Coverage Results" MODIFIED="1729690299350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios/Juegos" />
+    <SUITE FILE_PATH="coverage/pythonProject$Ejercicio_Diccionario.coverage" NAME="Ejercicio_Diccionario Coverage Results" MODIFIED="1729697916857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ejercicios/Juegos" />
+  </component>
+</project>

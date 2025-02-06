@@ -1,0 +1,38 @@
+Información proyecto Html
+
+Empresa de hoteles (Safatel)
+Iniciada en España y expandido en Australia , Europa y Rusia
+Abir dos hoteles en Punta Cana y en Republica Dominicana
+Busca facilidad para los clientes de encontrar hoteles facilmente y poder registrarse, pagar, eleguir habitación, madar correos (Estilo Booking)
+
+Páginas :
+- Paguina de Inicio (Fotos,etc)
+	Información de la Empresa
+	Hoteles Pricipales
+	Acceso aun registro y login
+	buscador(con fecha entrada y salida, habitaciones necesarias, cantidad de huespedes) 
+	debajo del buscador poner chech box seleccionable por si necesita transporte
+
+- Página Registro :
+Formulario de Registro (Campos los que yo quiera)
+Vincula al Login
+
+- Página Login
+Formulario de Login 
+Vincula Inicio (cambiar botones)
+
+- Páguina Hoteles
+Hoteles seleccionado por ubicación
+Poner boton pago (vincula Pago)
+
+- Página Pago
+Métodos de pago
+Contraseña, etc
+
+- Páguina Éxito
+Mensaje de exito y vuelve a la página principal
+
+
+
+
+Entrega -> 5 de febrero

@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: nowrap !important;
+}
+
+.barra{
+    background-color:rgba(6, 26, 56, 0.781);
+}
+.barra img{
+    margin-left: 5%;
+    width: 100px;
+}
+
+.botones_barra{
+    gap: 10%;
+    margin-right: 10%;
+}
+
+.formulario{
+    background-color:rgba(6, 26, 56, 0.781);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: whitesmoke;
+    padding: 4%;
+    background-image: url(../Imagenes/prueba2.jpg);
+    background-repeat: no-repeat;
+
+}
+
+.fondo{
+    background-image: url(../Imagenes/prueba2.jpg);
+    background-repeat: no-repeat;
+    padding: 10%;
+    text-align: center;
+    color: whitesmoke;
+}
+
+h3{
+    text-align: center;
+}
+
+.intro{
+    background-color: rgba(6, 26, 56, 0.781);
+    text-align: center;
+    padding: 1%;
+    margin-bottom: 0;
+    color: whitesmoke;
+}
+
+.carusel img{
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.titulo{
+    background-color: rgba(6, 26, 56, 0.781);
+    color: whitesmoke;
+    text-align: center;
+    padding: 3%;
+}
+
+.imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgba(6, 26, 56, 0.781);
+}
+.imagenes img{
+    width: 300px;
+    height: 175px;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.imagenes img:hover{
+    transform: translateY(-10px);
+    transition: transform 0.6s ease;
+}
+
+.imagenes h5{
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.texto{
+    background-color:rgba(6, 26, 56, 0.781);
+    text-align: center;
+    color: rgba(6, 26, 56, 0.781);
+    scrollspy-example { 
+        max-height: 400px;
+        overflow-y: auto; 
+      }
+}
+
+.texto h2{
+    color: whitesmoke;
+}
+
+.botones{
+    padding: 1%;
+    gap: 1px;
+}
+
+.final{
+    background-color:rgba(6, 26, 56, 0.781);
+    color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    padding: 3%;
+}
+
+.final img{
+    cursor: pointer;
+}

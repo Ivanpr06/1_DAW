@@ -113,10 +113,6 @@ nav{
     margin-left: 5%;
 }
 
-.precio{
-    background-color:rgba(6, 26, 56, 0.781);
-}
-
 .cartas{
     display: flex;
     flex-wrap: wrap;
@@ -125,10 +121,29 @@ nav{
 }
 
 .carta{
-    width: 360px !important;
+    width: 400px !important;
     margin-bottom: 5%;
 }
 
 .confirmar img{
     width: 100px;
+}
+
+.precio{
+    background-color:rgba(6, 26, 56, 0.781);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5%;
+    gap: 20%;
+}
+
+.oferta{
+    color: whitesmoke;
+    display: flex;
+}
+
+
+.precio_final h5{
+    color: whitesmoke;
 }

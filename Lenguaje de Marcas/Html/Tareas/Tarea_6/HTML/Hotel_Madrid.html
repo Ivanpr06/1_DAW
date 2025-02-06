@@ -45,8 +45,8 @@
 
                 <div class=".container-sm fotos">
                     <img src="../Imagenes/foto_Madrid4.jpg" alt="foto4">
-                    <img src="../Imagenes/foto_Madrid1.jpg" alt="foto1">
                     <img src="../Imagenes/foto_Madrid2.jpg" alt="foto2">
+                    <img src="../Imagenes/foto_Madrid1.jpg" alt="foto1">
                     <img src="../Imagenes/foto_Madrid3.jpg" alt="foto3">
                     
                 </div>
@@ -161,21 +161,33 @@
           <h2><i><b>Precio</b></i></h2>
         </div>
         <div class="precio">
-          <button type="button" class="btn btn-outline-light" id="liveToastBtn">Reservar</button>
-            <div class="toast-container position-fixed bottom-0 end-0 p-3">
-              <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header confirmar">
-                  <img src="../Imagenes/logo.jpg" class="rounded me-2" alt="logo">
-                  <strong class="me-auto">Safatel</strong>
-                  <small>Confirme su Compra</small>
-                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                  <button type="button" class="btn btn-outline-success">Confirmar</button>
-                  <button type="button" class="btn btn-outline-danger">Rechazar</button>
+
+          <div class="oferta">
+            <div class="texto">
+              <h2>Oferta Flash: Reserva y Ahorra</h2>
+              <p>¡No dejes pasar esta oportunidad única! Durante las próximas <b>48</b> horas,<br> disfruta de un <b>20%</b> de descuento en tu reserva en hoteles seleccionados.</p>
+            </div>
+            
+          </div>
+          <img src="../Imagenes/regalo.png" alt="regalo">
+          <div class="precio_final">
+            <h5>324 $ / noche</h5>
+            <button type="button" class="btn btn-outline-light" id="liveToastBtn">Reservar</button>
+              <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                  <div class="toast-header confirmar">
+                    <img src="../Imagenes/logo.jpg" class="rounded me-2" alt="logo">
+                    <strong class="me-auto">Safatel</strong>
+                    <small>Confirme su Compra</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                  </div>
+                  <div class="toast-body">
+                    <a href="./Pago.html"><button type="button" class="btn btn-outline-success">Confirmar</button></a>
+                    <a href="./Hotel_Madrid.html"><button type="button" class="btn btn-outline-danger">Rechazar</button></a>
+                  </div>
                 </div>
               </div>
-            </div>
+          </div>
         </div>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

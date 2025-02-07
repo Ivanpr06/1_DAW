@@ -116,13 +116,14 @@ nav{
 .cartas{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     gap: 2%;
     padding: 2%;
 }
 
 .carta{
-    width: 400px !important;
     margin-bottom: 5%;
+    width: 400px !important;
 }
 
 .confirmar img{

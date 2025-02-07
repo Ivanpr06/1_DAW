@@ -33,27 +33,8 @@ nav{
     cursor: pointer;
 }
 
-
-.formulario{
-    background-image: url(../Imagenes/prueba2.jpg);
+.check{
+    margin-top: 50px;
     color: whitesmoke;
-    padding: 4%;
     text-align: center;
-    width: 60%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 20%;
-    margin-right: 20%;
-    border-radius: 50px;
-}
-
-.forma_pago img{
-    width: 50px;
-    cursor: pointer;
-}
-
-.formulario_2{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }

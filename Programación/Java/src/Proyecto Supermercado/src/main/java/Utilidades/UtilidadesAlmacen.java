@@ -17,9 +17,15 @@ public class UtilidadesAlmacen {
             }else{
                 mapa.put(producto.getAlmacen(), 1);
             }
-        if(mapa.containsKey(producto.getAlmacen().getCapacidad()) > mapa.containsValue()){n 
-            return true;
         }
+        Boolean validar = false;
+        for(Almacen almacen : mapa.keySet()){
+        if (almacen.getCapacidad()> mapa.get(almacen)){
+            validar = true;
+        } else {
+            validar = false;
         }
+    }return validar;
+
     }
 }

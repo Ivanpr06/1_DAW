@@ -1,0 +1,7 @@
+package Modelos;
+
+public enum RegionPersonaje {
+    DEMACIA, NOXUS, JONIA, SHURIMA, TARGON,
+    FREIJORD, PILTOVER, ZAUM, BANDLE,
+    AGUAS_ESTANCADAS, DESCONOCIDA
+}

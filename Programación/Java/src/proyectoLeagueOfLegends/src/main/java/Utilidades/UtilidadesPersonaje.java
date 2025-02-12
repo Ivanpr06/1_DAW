@@ -9,14 +9,26 @@ import java.util.*;
 public class UtilidadesPersonaje {
 
     public Personaje levelUp(Personaje personaje){
-        int nivel = 0;
         Personaje personajeActual = new Personaje();
+        int nivel = personaje.getNivel();
+
 
         personajeActual.setNivel(personaje.getNivel()+1);
         personajeActual.setAtaqueBase(personaje.getAtaqueBase() + personaje.getEscalabilidad().getIncrementodaDanyoNivel() * nivel);
         personajeActual.setDefensaBase(personaje.getDefensaBase() + personaje.getEscalabilidad().getIncrementoDefensaNivel() * nivel);
         personajeActual.setVidaBase(personaje.getVidaBase() + personaje.getEscalabilidad().getIncrementoSaludNivel() * nivel);
         personajeActual.setMana(personaje.getMana() + personaje.getEscalabilidad().getIncrementoManaNivel() * nivel);
+        return personajeActual;
+    }
+
+    public Personaje levelUp18(Personaje personaje){
+        Personaje personajeActual = new Personaje();
+
+        personajeActual.setNivel(personaje.getNivel()+18);
+        personajeActual.setAtaqueBase(personaje.getAtaqueBase() + personaje.getEscalabilidad().getIncrementodaDanyoNivel() * 18);
+        personajeActual.setDefensaBase(personaje.getDefensaBase() + personaje.getEscalabilidad().getIncrementoDefensaNivel() * 18);
+        personajeActual.setVidaBase(personaje.getVidaBase() + personaje.getEscalabilidad().getIncrementoSaludNivel() * 18);
+        personajeActual.setMana(personaje.getMana() + personaje.getEscalabilidad().getIncrementoManaNivel() * 18);
         return personajeActual;
     }
 

@@ -1,0 +1,146 @@
+<?xml version="1.0" enconding="UTF-8"?>
+
+<!--Ejercicio 1-->
+<cancion>
+    <titulo>Rock with you</titulo>
+    <compositor>Rod Temperton</compositor>
+    <productor>Quincy Jones</productor>
+    <discografica>Epic</discografica>
+    <artista>Michael Jackson</artista>
+</cancion>
+
+<!--Ejercicio 2-->
+<cancion duracion="3:40" año="1979">
+    <titulo>Rock with you</titulo>
+    <compositores>
+        <compositor>
+            <nombre>Rod</nombre>
+            <apellidos>Temperton</apellidos>
+        </compositor>
+    </compositores>
+    <discografica>Epic</discografica>
+    <productores>
+        <productor>
+            <nombre>Quincy</nombre>
+            <apellidos>Jones</apellidos>
+        </productor>
+    </productores>
+    <artistas>
+        <artista>Michael Jackson</artista>
+    </artistas>
+</cancion>
+
+<!--Ejercicio 3-->
+<servidores>
+    <servidor>
+        <ubicacion>Madrid</ubicacion>
+        <idServidor>ASP</idServidor>
+        <marca>HP</marca>
+        <uso>DNS</uso>
+        <fecha_uf> 2025-08-21</fecha_uf>
+        <hardware>
+            <placaBase tplaca="ASD">Micro</placaBase>
+            <memoria>
+                <cantMem amp="GB">400000</cantMem>
+                <veloMem veloc="Ghz">2500</veloMem>
+            </memoria>
+            <TarjRed>nxnjjshnjdn</TarjRed>
+            <TecnHD>SSD</TecnHD>
+            <CapacHD ahd="Tb">1284747</CapacHD>
+        </hardware>
+    </servidor>
+    
+    <servidor>
+        <ubicacion>Madrid</ubicacion>
+        <idServidor>ASP</idServidor>
+        <marca>HP</marca>
+        <uso>DNS</uso>
+        <fecha_uf> 2025-08-21</fecha_uf>
+        <hardware>
+            <placaBase tplaca="ASD">Micro</placaBase>
+            <memoria>
+                <cantMem amp="GB">400000</cantMem>
+                <veloMem veloc="Ghz">2500</veloMem>
+            </memoria>
+            <TarjRed>nxnjjshnjdn</TarjRed>
+            <TecnHD>SSD</TecnHD>
+            <CapacHD ahd="Tb">1284747</CapacHD>
+        </hardware>
+    </servidor>
+    
+    <servidor>
+        <ubicacion>Madrid</ubicacion>
+        <idServidor>ASP</idServidor>
+        <marca>HP</marca>
+        <uso>DNS</uso>
+        <fecha_uf> 2025-08-21</fecha_uf>
+        <hardware>
+            <placaBase tplaca="ASD">Micro</placaBase>
+            <memoria>
+                <cantMem amp="GB">400000</cantMem>
+                <veloMem veloc="Ghz">2500</veloMem>
+            </memoria>
+            <TarjRed>nxnjjshnjdn</TarjRed>
+            <TecnHD>SSD</TecnHD>
+            <CapacHD ahd="Tb">1284747</CapacHD>
+        </hardware>
+    </servidor>
+</servidores>
+
+<!--Ejercicio 4-->
+<coleccion>
+   <titulo>Lenguaje de Marcas</titulo>
+        <Autores>
+            <autor>Alex Tolon</autor>
+        </Autores>
+        <modulo>LMSGI</modulo>
+        <licencia>CC3.0</licencia>
+        <fechaPublicación>Septiembre 2011</fechaPublicación>
+        <ISBN>978929212456</ISBN>
+        <lecciones>
+            <leccion>
+                <parrafo>Parrafo1</parrafo>
+                <parrafo>Parrafo2</parrafo>
+                <imagen>imagen1</imagen>
+                <autoevaulacion>1</autoevaulacion>
+                <autoevaulacion>2</autoevaulacion>
+                <ejercicio>Ejercicio1</ejercicio>
+            </leccion>
+            <leccion>
+                <parrafo>1</parrafo>
+                <parrafo>2</parrafo>
+                <parrafo>3</parrafo>
+                <animacion>1</animacion>
+                <autoevaulacion>1</autoevaulacion>
+                <ejercicio>1</ejercicio>
+            </leccion>
+        </lecciones>
+    </ebook>
+
+    <ebook>
+        <titulo>Empresa e Iniciativa Emprendedora</titulo>
+        <Autores>
+            <autor>Miguel Ángel Sánchez</autor>
+            <autor>Xabier Epelde</autor>
+        </Autores>
+        <modulo>EIE</modulo>
+        <licencia>Public Domain</licencia>
+        <fechaPublicación>25 de Junio de 2010</fechaPublicación>
+        <ISBN>978439288416</ISBN>
+        <lecciones>
+            <leccion>
+                <parrafo>Parrafo1</parrafo>
+                <parrafo>Parrafo2</parrafo>
+                <parrafo>Parrafo3</parrafo>
+                <animacion>1</animacion>
+                <animacion>2</animacion>
+                <autoevaulacion>1</autoevaulacion>
+                <ejercicio>Ejercicio1</ejercicio>
+                <ejercicio>Ejercicio2</ejercicio>
+            </leccion>
+        </lecciones>
+    </ebook>
+</coleccion>
+
+
+

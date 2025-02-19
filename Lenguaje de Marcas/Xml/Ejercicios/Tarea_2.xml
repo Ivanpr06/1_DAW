@@ -1,0 +1,92 @@
+<?xml version="1.0" enconding="UTF-8"?>
+
+<!--Ejercicio 1-->
+<figuras>
+    <figura_plana>
+        <nombre>cuadrado</nombre>
+        <lados>4</lados>
+    </figura_plana>
+    <figura>
+        <nombre>triángulo</nombre>
+        <lados>3</lados>
+    </figura>
+    <figura_tridimensional>
+        <nombre>cubo</nombre>
+        <aristas>12</aristas>
+        <caras>6</caras>
+    </figura_tridimensional>
+</figuras>
+
+<!--Ejercicio 2-->
+<transporte>
+    <terrestres>
+        <vehiculo>bicicleta<vehiculo>
+        </vehiculo>coche<vehiculo>
+        <vehiculo>tractor</vehiculo>
+    </terrestres>
+    <acuaticos>
+        <vehiculo>canoa<vehiculo>
+    </acuaticos>
+    <aereos>
+        <vehiculo>avioneta<vehiculo>
+        <vehiculo>helicóptero<vehiculo>
+    </aereos>
+</transporte>
+
+<!--Ejercicio 3-->
+<furbol>
+    <equipo>
+        <nombre>Real Madrid FC</nombre>
+        <ciudad>Madrid</ciudad>
+        <entrenador></entrenador>
+        <jugadores>
+            <jugador>
+                <nombre>Messi</nombre>
+                <posicion posicion="delantero"></posicion>
+                <nacionalidad>Argentina</nacionalidad>
+            </jugador>
+            <jugador>
+                <nombre>Messi</nombre>
+                <posicion posicion="delantero"></posicion>
+                <nacionalidad>Argentina</nacionalidad>
+            </jugador>
+        </jugadores>
+    </equipo>
+
+    <equipo>
+        <nombre>Real Madrid FC</nombre>
+        <ciudad>Madrid</ciudad>
+        <entrenador></entrenador>
+        <jugadores>
+            <jugador>
+                <nombre>Messi</nombre>
+                <posicion posicion="delantero"></posicion>
+                <nacionalidad>Argentina</nacionalidad>
+            </jugador>
+            <jugador>
+                <nombre>Messi</nombre>
+                <posicion posicion="delantero"></posicion>
+                <nacionalidad>Argentina</nacionalidad>
+            </jugador>
+        </jugadores>
+    </equipo>
+</furbol>
+
+<!--Ejercicio 4-->
+<cancion duracion="4:47" anio="2008">
+    <titulo>Give it 2 me</titulo>
+    <compositores>
+        <compositor>
+            <nombre>Pharell</nombre>
+            <apellidos>Williams</apellidos>
+        </compositores>
+    </compositores>
+    <productores>
+        <productor>
+            <nombre>Pharell</nombre>
+            <apellidos>Williams</apellidos>
+        </productor>
+    </productores>
+    <sello>Warner Bros. Records</sello>
+    <arista>Madonna</artista>
+</cancion>

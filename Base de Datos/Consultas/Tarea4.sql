@@ -247,5 +247,23 @@ inner join comunidades c on m.id_comunidad = c.id
 where extract(year from c.fecha_creacion) = 2024;
 
 # 35. Lista los eventos sin usuarios participantes y las comunidades sin moderadores, en una misma consulta. 
+select e.nombre, c.nombre 
+from eventos e 
+inner join participaciones p on e.id = p.id_evento 
+inner join usuarios u on p.id_usuario = u.id 
+inner join moderacion m on u.id = m.id_usuario 
+inner join comunidades c on m.id_comunidad = c.id 
+where u.nombre is null;
 
+# 36. Encuentra los usuarios y las comunidades que moderan, pero incluye también a los usuarios que no moderan ninguna comunidad. 
+select u.nombre, c.nombre 
+from usuarios u 
+left join moderacion m on u.id = m.id_usuario 
+left join comunidades c on m.id_comunidad = c.id;
 
+# 37. Muestra los eventos a los que no ha asistido ningún usuario con más de 20 años. 
+select * from (select u.nombre, e.nombre e_nombre, abs(timestampdiff(year, now(), u.fecha_nacimiento))edad
+from usuarios u
+join participaciones p on u.id = p.id_usuario 
+join eventos e on e.id = p.id_evento)aux
+where  edad > 20;

@@ -1,0 +1,8 @@
+<?xml version="1.0" enconding="UTF-8"?>
+
+<regis>
+    <autor>José Saramago</autor>
+    <titulo idioma="Español">Memorial del Convento</titulo>
+    <titulo idioma="Portugues">Memorial del Convento</titulo>
+    <portada filenom="fport.jpg"></portada>
+</regis>

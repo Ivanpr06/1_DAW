@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet href="prueba.xslt" type="text/xsl"?>
+
+<canasta>
+    <producto IdProdcto="057">
+        <nombre>Manzana</nombre>
+        <origen>México</origen>
+        <cantidad>20</cantidad>
+        <precio>14.5</precio>
+    </producto>
+</canasta>

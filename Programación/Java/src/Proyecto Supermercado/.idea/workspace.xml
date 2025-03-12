@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a8b7033-a158-4b3c-8119-37da586a3deb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../Entorno Desarrollo/Java/src/Examen Entorno/.idea/Examen Entorno.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Entorno Desarrollo/Java/src/Examen Entorno/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Entorno Desarrollo/Java/src/Examen Entorno/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Entorno Desarrollo/Java/src/Examen Entorno/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Entorno Desarrollo/Java/src/Examen Entorno/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +62,8 @@
       <workItem from="1740512567987" duration="1131000" />
       <workItem from="1741016234335" duration="79000" />
       <workItem from="1741117131044" duration="12000" />
+      <workItem from="1741789749079" duration="115000" />
+      <workItem from="1741790281725" duration="99000" />
     </task>
     <servers />
   </component>

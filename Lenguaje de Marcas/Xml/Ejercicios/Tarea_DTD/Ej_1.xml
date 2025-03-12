@@ -1,6 +1,6 @@
-<?xml version="1.0" enconding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
-<DOCTYPE biblioteca SYSTEM "Ej_1.dtd">
+<?DOCTYPE biblioteca SYSTEM "Ej_1.dtd"?>
 
 <biblioteca>
     <libro>

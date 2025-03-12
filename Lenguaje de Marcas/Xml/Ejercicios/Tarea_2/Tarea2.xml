@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?DOCTYPE pelicula SYSTEM "DTD.dtd"?>
+
+<?xml-stylesheet href="Tarea2.xlst" type="text/xsl"?>
+
+<pelicula>
+    <info>
+        <ticket>FSO-GIRA FENIX</ticket>
+        <codigo>12114TG4314HJ13413</codigo>
+    </info>
+
+    <datos>
+        <fecha>25/03/2022</fecha>
+        <lugar>Palacio de los Congresos</lugar>
+        <ciudad>Sevilla</ciudad>
+        <precio>60,00$</precio>
+    </datos>
+
+</pelicula>

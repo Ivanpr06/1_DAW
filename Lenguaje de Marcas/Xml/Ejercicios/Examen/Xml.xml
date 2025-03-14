@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<?DOCTYPE pokedex SYSTEM "Dtd.dtd"?>
+<?xml-stylesheet href="Xsd.xsd" type="text/xsl"?>
+<?xml-stylesheet href="Xslt.xlst" type="text/xslt"?>
+
+<piratas>
+    <pirata nombre="Jack Sparrow" imagen="https://sparrow.jpg">
+        <datos_actor>
+            <nombre>Johnny</nombre>
+            <apellidos>Deep</apellidos>
+            <sexo>M</sexo>
+            <nacimiento>09-06-1963</nacimiento>
+        </datos_actor>
+
+        <peliculas>
+            <pelicula>
+                <datos>
+                    <titulo>La maldición de la perla negra</titulo>
+                    <saga>Piratas del Caribe</saga>
+                </datos>
+            </pelicula>
+        </peliculas>
+
+        <roles>
+            <rol>
+                <tipo_rol>CAPITÁN</tipo_rol>
+                <barco>La Perla Negra</barco>
+            </rol>
+        </roles>
+
+    </pirata>
+</piratas>

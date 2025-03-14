@@ -34,6 +34,14 @@
                                     <xs:element name="descripcion" type="xs:string"/>
                                 </xs:sequence>
                             </xs:element>
+
+                            <xs:element name="saga">
+                                <xs:sequence>
+                                    <xs:element name="descripcion" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:element>
+
+
                         </xs:complexType>
                       </xs:element>
                         

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="registro-h1">
+        <h1>Bienvenido</h1>
+    </div>
+    <div class="registro">
+        <div class="acceder">
+            <h3>Acceder</h3>
+            <div class="form-floating mb-3 formulario">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating formulario">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="boton-registro">
+                <p>Acceder</p>
+            </div>
+        </div>
+        <div class="imagen-espinas">
+            <img src="{% static 'resources/espinas_separadoras.png' %}">
+        </div>
+        <div class="iniciar_sesion formulario">
+            <h3>Iniciar Sesión</h3>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating formulario">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <p style="padding-top: 5%">Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web, gestionar el acceso a tu cuenta y otros propósitos descritos en nuestra política de privacidad.</p>
+            <div class="boton-registro">
+                <p>Iniciar Sesión</p>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

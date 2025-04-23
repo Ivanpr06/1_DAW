@@ -1,0 +1,11 @@
+{% load static %}
+
+{% block content %}
+    <h1>Listado de Comida</h1>
+    
+    {% for c in lista_comida %}
+    	<p>{{ c.id }} {{ c.nombre }}</p>
+        <p></p>
+    {% endfor %}
+    
+{% endblock %}

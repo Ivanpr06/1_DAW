@@ -1,0 +1,25 @@
+{% load static %}
+{% block header %}
+    <nav class="nav-bar">
+        <div class="logo-tito">
+            <a href="{% url 'home' %}"><img src="{% static 'resources/tito-picantito-logo-texto-lateral-removebg-preview.png' %}"></a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="botones-navbar">
+            <a class="boton-navbar" href="{% url 'home' %}" style="text-decoration: none">Inicio</a>
+            <a class="boton-navbar" href="#" style="text-decoration: none">Carta</a>
+            <a class="boton-navbar" href="{% url 'conocenos' %}" style="text-decoration: none">Conoce a Tito</a>
+            <a class="boton-navbar-filled" href="#" style="text-decoration: none">Pedir</a>
+            <a class="boton-navbar-filled" href="https://www.ubereats.com/es/feed?diningMode=DELIVERY&lat=37.3890924&lng=-5.9844589&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlNldmlsbGElMjIlMkMlMjJyZWZlcmVuY2UlMjIlM0ElMjJDaElKa1dLLUZCRnNFZzBSU0ZiLUhHSVk4RFElMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyZ29vZ2xlX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBMzcuMzg5MDkyNCUyQyUyMmxvbmdpdHVkZSUyMiUzQS01Ljk4NDQ1ODklN0Q%3D" style="text-decoration: none">Uber Eats</a>
+            <a class="boton-navbar" href="{% url 'registro' %}">
+                <img src="{% static 'resources/icon-usuario-white.png' %}">
+            </a>
+        </div> 
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector(".botones-navbar").classList.toggle("show");
+        }
+    </script>
+{% endblock %}

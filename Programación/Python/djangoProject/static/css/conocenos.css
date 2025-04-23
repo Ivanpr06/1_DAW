@@ -1,0 +1,89 @@
+.conocenos h1{
+    text-align: center;
+    font-size: 300%;
+    background-color: rgb(164, 180, 101);
+    margin: 0;
+    padding: 2%;
+}
+
+.class-grid1{
+    padding-right: 5%;
+    padding-left: 5%;
+    display: grid;
+    grid-template-columns:40% 6% 40%;
+    gap: 5%;
+    text-align: center;
+    background-color: rgb(164, 180, 101);
+    margin-top: -6px;
+}
+
+.class-grid2{
+    padding-right: 5%;
+    padding-left: 5%;
+    display: grid;
+    grid-template-columns:40% 6% 40%;
+    gap: 5%;
+    text-align: center;
+    background-color: rgb(164, 180, 101);
+    margin-top: -6px;
+}
+
+.espinas img{
+    width: 30px;
+}
+
+.animation1{
+    font-size: 20px;
+    animation-duration: 1s;
+    animation-name: slidein1;
+}
+
+.animation2{
+    font-size: 20px;
+    animation-duration: 1s;
+    animation-name: slidein2;
+}
+
+@keyframes slidein1 {
+  from {
+    margin-left: -100%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slidein2 {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.foto img{
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .class-grid1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .class-grid2{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .espinas img{
+        display: none;
+    }
+}

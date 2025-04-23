@@ -1,0 +1,49 @@
+html{
+    background-color: rgb(164, 180, 101);
+}
+
+.registro-h1 h1{
+    background-color: rgb(164, 180, 101);
+    text-align: left;
+    font-size: 400%;
+    margin: 0;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 4%;
+}
+
+.registro {
+    background-color: rgb(164, 180, 101);
+    display: grid;
+    grid-template-columns: 40% 6% 40%;
+    gap: 5%;
+    padding: 5%;
+}
+
+.imagen-espinas img{
+    width: 30px;
+    margin-top: -20%;
+}
+
+.boton-registro p{
+    cursor: pointer;
+    padding: 3%;
+    background-color: white;
+    color: rgb(164, 180, 101);
+    margin-top: 5%;
+    width: 150px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+@media (max-width: 768px) {
+    .registro{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imagen-espinas img{
+        display: none;
+    }
+}
+

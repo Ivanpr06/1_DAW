@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo3.Controller2">
+    <children>
+        <Label layoutX="286.0" layoutY="34.0" text="Nombre" />
+        <Label layoutX="284.0" layoutY="105.0" text="Apellidos" />
+        <Label layoutX="295.0" layoutY="170.0" text="Edad" />
+        <TextField fx:id="TextNombre" layoutX="234.0" layoutY="64.0" />
+        <TextField fx:id="TextApellidos" layoutX="234.0" layoutY="134.0" />
+        <TextField fx:id="TextEdad" layoutX="234.0" layoutY="200.0" />
+        <Button fx:id="BotonGuardar" layoutX="260.0" layoutY="244.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" onAction="#guardarPersona" text="Guardar" />
+        <Button fx:id="BotonSalir" layoutX="263.0" layoutY="290.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" onAction="#botonSalir" text="Salir" />
+    </children>
+</AnchorPane>

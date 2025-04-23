@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: black;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.video-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 75px;
+    font-weight: bold;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 1.5);
+    text-align: center;
+}
+
+.expositor-platos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:5%;
+    background-color: rgb(164, 180, 101);
+}
+
+.plato{
+    display: flex;
+    flex-wrap: wrap;
+}
+.plato img{
+    width: 275px;
+    height: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.footer-comida{
+    background-image: url("/static/resources/ChatGPT Image 9 abr 2025, 17_19_18.png");
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+}
+
+.footer-comida h1{
+    font-size: 100px;
+    color:white;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 1.5);
+    font-family: "Bebas Neue", sans-serif !important;
+}
+
+.footer-comida h2{
+    font-size: 30px;
+    color:white;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 1.5);
+}
+
+.footer-comida h3{
+    color: white;
+    padding: 20px;
+    margin-left: 45%;
+    margin-right: 45%;
+    background-color: rgb(164, 180, 101);
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 1.5);
+    cursor: pointer;
+}
+
+@media (max-width: 610px){
+    .plato img{
+        width: 250px;
+    }
+}
+
+@media (max-width: 550px){
+    .plato img{
+        width: 375px;
+    }
+}
+
+@media (max-width: 425px){
+    .plato img{
+        width: 275px;
+    }
+}
+
+@media (max-width: 450px){
+    .video-texto{
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 800px){
+    .footer-comida h3{
+        margin-right: 30%;
+        margin-left: 30%;
+    }
+}
+
+
+

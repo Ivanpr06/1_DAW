@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo1.FXMLprueba1Controller">
+   <children>
+      <Label layoutX="135.0" layoutY="100.0" text="Operador 1" />
+      <Label layoutX="135.0" layoutY="144.0" text="Operador 2" />
+      <TextField fx:id="txtop1" layoutX="217.0" layoutY="96.0" promptText="Intoducir Numero" />
+      <TextField fx:id="txtop2" layoutX="217.0" layoutY="140.0" promptText="Intoducir Numero" />
+      <Button fx:id="result" layoutX="217.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Operar" />
+      <Label layoutX="139.0" layoutY="318.0" text="Resultado" />
+      <TextField fx:id="txtresult" editable="false" layoutX="221.0" layoutY="314.0" promptText="Resultado" />
+      <RadioButton fx:id="botonSuma" layoutX="196.0" layoutY="238.0" mnemonicParsing="false" selected="true" text="Suma">
+         <toggleGroup>
+            <ToggleGroup fx:id="conjuntoBotones" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="botonResta" layoutX="197.0" layoutY="271.0" mnemonicParsing="false" text="Resta" toggleGroup="$conjuntoBotones" />
+      <RadioButton fx:id="BotonMulti" layoutX="302.0" layoutY="238.0" mnemonicParsing="false" text="Multiplicacion" toggleGroup="$conjuntoBotones" />
+      <RadioButton fx:id="botonDivision" layoutX="302.0" layoutY="271.0" mnemonicParsing="false" text="Division" toggleGroup="$conjuntoBotones" />
+   </children>
+</AnchorPane>

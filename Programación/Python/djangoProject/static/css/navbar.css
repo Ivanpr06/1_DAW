@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.logo-tito img {
+    width: 150px;
+    height: auto;
+}
+
+.botones-navbar {
+    display: flex;
+    align-items: center;
+}
+
+.boton-navbar {
+    color: white;
+    padding: 8px 10px;
+    margin: 0px 8px;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.boton-navbar:hover{
+    color: rgb(164, 180, 101);
+}
+
+.boton-navbar img{
+    width: 30px;
+    transition:  0.2s;
+}
+
+.boton-navbar img:hover {
+   filter: sepia(1) saturate(6) hue-rotate(30deg) brightness(1.1);
+}
+
+.boton-navbar-filled {
+    color: white;
+    background-color: green;
+    padding: 8px 10px;
+    margin: 0px 8px;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+.boton-navbar-filled:hover{
+    background-color: #01aa01;
+}
+
+@media (max-width: 768px) {
+    .botones-navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .botones-navbar.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+            color: white;
+    padding: 8px 10px;
+    margin: 0px 8px;
+    cursor: pointer;
+    transition: color 0.5s;
+    }
+}
+

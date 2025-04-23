@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src= {% static '/resources/video-expositor-titopicantito.mp4'%}>
+            <source src="video.webm" type="video/webm">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+        <div class="video-texto">Atrévete a probar el fuego</div>
+    </div>
+        
+    <div class="expositor-platos">
+        <div class="plato">
+            <img src="{% static 'resources/alitas2-img.png' %}">
+        </div>
+        
+         <div class="plato">
+            <img src="{% static 'resources/margarita-img.png' %}">
+        </div>
+
+        <div class="plato">
+            <img src="{% static 'resources/hamburguesa-img.png' %}">
+        </div>
+        
+        <div class="plato">
+            <img src="{% static 'resources/queso.png' %}">
+        </div>
+    </div>
+        
+    <div class="footer-comida">
+        <h1>Consuma bajo su propio riesgo</h1>
+        <h2>Este menú es solo para amantes del picante</h2>
+        <h3>Ver Carta</h3>
+    </div>
+    
+{% endblock content %}

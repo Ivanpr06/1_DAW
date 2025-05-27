@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form id="form-foto" method="POST" enctype="multipart/form-data" action="{% url 'actualizar_foto' %}" style="display: none;">
+  {% csrf_token %}
+  <input type="file" id="input-foto" name="foto" accept="image/*" onchange="document.getElementById('form-foto').submit();">
+</form>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/images/fondoAdmin.png'); background-size: cover; background-position: 50% 50%;">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="150" height="150">
+            </a>
+    
+            <!-- Menú colapsable -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Enlaces -->
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'home' %}">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'carta' %}">CARTA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'contacto' %}">CONTACTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'acerca_de' %}">ACERCA DE</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Botón Cliente / Logout-->
+            <div class="d-flex">
+            {% if user.is_authenticated %}
+                <a href="#" class="btn d-flex align-items-center text-light p-0 border-0 bg-transparent cuenta"
+                   data-bs-toggle="modal" data-bs-target="#perfilModal">
+                  {% if user.foto %}
+                    <img src="{{ user.foto.url }}" alt="Foto de perfil" class="rounded-circle me-2" style="width: 35px; height: 35px; object-fit: cover;">
+                  {% else %}
+                    <i class="bi bi-person-circle fs-4 me-2"></i>
+                  {% endif %}
+                  <span>{{ user.nombre }}</span>
+                </a>
+            {% else %}
+              <a href="{% url 'log_in_page' %}" class="btn btn-outline-light me-2 d-flex align-items-center navbar">
+                <i class="bi bi-person-fill me-1"></i> CLIENTE
+              </a>
+            {% endif %}
+            <a href="{% url 'carta' %}" class="btn btn-danger navbar">HAZ TU PEDIDO</a>
+            </div>
+        </div>
+    
+        <!-- Título -->
+        <div class="presentacion_mod">
+            <h1>PEDIDO</h1>
+        </div>
+    </nav>
+    
+
+    <div class="pedido_content">
+        <h1>Resumen:</h1>
+    
+        {% for k,v in carrito.items %}
+            <div class="contenido_carrito">
+                <p style=" color: rgba(122, 121, 121, 1);">{{ k.nombre }}</p>
+                
+                <div class="cantidad_carrito">
+                    <a href="{% url 'restar_producto' k.id %}" class="cantidad_carrito_suma">-</a>
+                    <p style="text-align: center">{{ v }}</p>
+                    <a href="{% url 'sumar_producto' k.id %}" class="cantidad_carrito_suma">+</a>
+                </div>
+            </div>
+        {% endfor %}
+    
+        <div class="contenido_carrito_boton_volver">
+            <a href="{% url 'carta' %}"><button><img src="{% static 'images/flecha_seguir_comprando.png' %}">Seguir Comprando</button></a>
+        </div>
+    
+        <div class="contenido_carrito_boton_finalizar">
+            <div class="contenido_carrito_texto_finalizar">
+                <p>Total:</p>
+                <p>{{ total }}€</p>
+            </div>
+
+            <form method="post" action="{% url 'completar_compra'%}">
+                {% csrf_token %}
+                <button class="contenido_carrito_boton_enviar" onclick="document.getElementById('popout').style.display='flex'">ENVIAR</button>
+            </form>
+            
+            <div id="popout" class="carrito_popout">
+                <div class="carrito_popout_content">
+                    <h1>¡Pago Realizado <br> con Éxito!</h1>
+                    <img src="{% static 'images/tick_carrito.png' %}">
+                    <a href="{% url 'home' %}">
+                        <button class="contenido_carrito_boton_enviar">Volver</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal para mostrar y editar el perfil -->
+<div class="modal fade" id="editarPerfilModal" tabindex="-1" aria-labelledby="editarPerfilModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarPerfilModalLabel">Editar Perfil</h5>
+          <button type="button" class="btn-close" id="cerrarEditarPerfilBtn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{% url 'editar_perfil' %}">
+          {% csrf_token %}
+          
+          <!-- Campos del formulario -->
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ user.nombre }}">
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ user.telefono }}">
+          </div>
+          <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" value="{{ user.direccion }}">
+          </div>
+          
+          <!-- Botón para guardar cambios -->
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="cerrarFooterEditarPerfilBtn" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para mostrar el perfil del usuario -->
+<div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="perfilModalLabel">Perfil del Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <!-- BOTÓN FOTO PERFIL -->
+        <button class="btn p-0 border-0 bg-transparent" onclick="document.getElementById('input-foto').click();">
+          {% if user.foto %}
+            <img src="{{ user.foto.url }}" alt="Foto de perfil" id="preview-foto"
+                 class="rounded-circle me-2" style="width: 250px; height: 250px; object-fit: cover;">
+          {% else %}
+            <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                 style="width: 250px; height: 250px;">
+              <i class="bi bi-camera text-white"></i>
+            </div>
+          {% endif %}
+        </button>
+        <p><strong>Nombre:</strong> {{ user.nombre }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Teléfono:</strong> {{ user.telefono }}</p>
+        <p><strong>Dirección:</strong> {{ user.direccion }}</p>
+      
+        {% if user.rol == 'administrador' %}
+        <a href="{% url 'empleados' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Administrador</a>
+        {% endif %}
+        
+        {% if user.rol == 'cocinero' or user.rol == 'administrador' %}
+        <a href="{% url 'cocinero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Cocinero</a>
+        {% endif %}
+        
+        {% if user.rol == 'camarero' or user.rol == 'administrador' %}
+        <a href="{% url 'camarero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Camarero</a>
+        {% endif %}
+
+        <a href="{% url 'logout' %}" class="btn btn-danger logout">Cerrar sesión</a>
+      </div>
+      <div class="modal-footer">
+        <!-- Botón para abrir el modal de editar y cerrar el modal actual -->
+        <button href="#" data-bs-toggle="modal" data-bs-target="#editarPerfilModal" data-bs-dismiss="modal" class="btn btn-warning logout">Editar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+{% include 'footer.html' %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const editarPerfilModal = document.getElementById('editarPerfilModal');
+    const cerrarHeaderBtn = document.getElementById('cerrarEditarPerfilBtn'); // Botón de la cabecera
+    const cerrarFooterBtn = document.getElementById('cerrarFooterEditarPerfilBtn'); // Botón del footer
+
+    function reabrirPerfilModal() {
+      // Elimina backdrop manualmente si existe
+      document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+
+      const perfilModal = new bootstrap.Modal(document.getElementById('perfilModal'));
+      perfilModal.show();
+    }
+
+    function manejarCierreYReapertura(btn) {
+      if (btn && editarPerfilModal) {
+        btn.addEventListener('click', function () {
+          editarPerfilModal.addEventListener('hidden.bs.modal', function handler() {
+            editarPerfilModal.removeEventListener('hidden.bs.modal', handler);
+            reabrirPerfilModal();
+          });
+        });
+      }
+    }
+
+    // Aplica el manejo a ambos botones de cierre
+    manejarCierreYReapertura(cerrarHeaderBtn);
+    manejarCierreYReapertura(cerrarFooterBtn);
+  });
+</script>
+    
+    {% if mostrar_popout %}
+        <script>
+            window.onload = function() {
+                document.getElementById('popout').style.display = 'flex';
+            };
+        </script>
+    {% endif %}
+    
+{% endblock %}

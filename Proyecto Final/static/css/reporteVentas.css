@@ -1,0 +1,73 @@
+html{
+     background-color: #feefd4;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.reporte{
+    background-color: #feefd4;
+    font-family: 'Italianno', cursive;
+}
+
+.cabezera{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding-top: 2%;
+    width: 100%;
+}
+
+.cabezera img{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.ventas_titulo h1{
+    font-size: 50px;
+    margin: 0;
+    color: rgba(212, 163, 115, 1);
+}
+
+.ventas_titulo p{
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 10%;
+    color: rgba(212, 163, 115, 1);
+}
+
+.reportetabla{
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    width: 75%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid black;
+    border-left: 1px solid black ;
+    border-top: 1px solid rgba(212, 163, 115, 1);
+    border-bottom: 1px solid rgba(212, 163, 115, 1);
+    border-radius: 25px;
+    padding: 2%;
+}
+
+.reportetabla tr{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 130%;
+}
+
+.reportetabla th{
+    color: rgba(212, 163, 115, 1);
+    font-size: 30px;
+}
+
+.reportetabla td{
+    font-size: 20px;
+}
+
+

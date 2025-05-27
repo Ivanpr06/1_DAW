@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'navbarAdministrador.html' %}
+    
+<div class="anadir_producto">
+    <div class="mod_art">
+        <p>Añadir/Modificar Artículo</p>
+    </div>
+
+    <div class="formulario_anadir">
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-floating campo">
+                {{ form.nombre}}
+                <label>Nombre</label>
+            </div>
+
+            <div class="form-floating campo">
+                {{ form.descripcion }}
+                <label>Descripción</label>
+            </div>
+
+            <div class="form-floating campo">
+                {{ form.categoria }}
+                <label>Categoría</label>
+            </div>
+
+            <div class="form-floating campo">
+                {{ form.precio }}
+                <label>Precio</label>
+            </div>
+
+            <div class="form-floating campo">
+                {{ form.imagen_url }}
+                <label>Foto</label>
+            </div>
+
+            <div class="form-floating campo">
+                {{ form.receta }}
+                <label>Receta</label>
+            </div>
+
+            <div class="form-floating campo">
+                {{ form.tiempo_preparacion }}
+                <label>Tiempo Estimado</label>
+            </div>
+
+            <div class="boton_conf">
+                <button type="submit">CONFIRMAR</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

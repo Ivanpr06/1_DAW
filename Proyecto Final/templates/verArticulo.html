@@ -1,0 +1,52 @@
+{% extends 'base.html' %} 
+{% load  static %}
+{% block content %}
+    
+    {% include 'navbarAdministrador.html' %}
+    <div class="ver_empleados">
+        <h1>Gestión Carta</h1>
+        
+        <div class="ver_empleados_tabla">
+            <div class="col">
+                <div class="ver_articulos_titulo">
+                    <h3>Artículo</h3>
+                    <h3>Ingredientes</h3>
+                    <h3>Precio</h3>
+                    <h3>Categoría</h3>
+                    <h3>Receta</h3>
+                    <h3>Tiempo</h3>
+                </div>
+                {% for a in articulos %}
+                <div class="row">
+
+                    <div class="ver_empleados_row">
+                        <div class="custom_row2">
+                            <p class="ver_empleados_nombre2">{{a.nombre}}</p>
+                            <p class="ver_empleados_nombre">{{a.descripcion}}</p>
+                            <p class="ver_empleados_nombre">{{a.precio}}</p>
+                            <p class="ver_empleados_nombre">{{a.categoria}}</p>
+                            <p class="ver_empleados_nombre">{{a.receta}}</p>
+                            <p class="ver_empleados_nombre">{{a.tiempo_preparacion}}</p>
+                            
+                            <a href="{% url 'new_articulo' id=a.id %}">
+                                <button class="editar_empleado_btn"><img src="{% static 'images/editar_Admin.png' %}"></button>
+                            </a>
+                                
+                            <a href="{% url 'eliminar_articulo' id=a.id %}">
+                                <button class="eliminar_empleado_btn"><img src="{% static 'images/borrar_Admin.png' %}"></button>
+                            </a>
+                            
+                        </div>
+                    </div>
+                         
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <a href="{% url 'new_articulo' id=0 %}">
+            <button class="crear_empleado_btn">Añadir Artículo</button>
+        </a>
+    
+    </div>
+{% endblock %}

@@ -1,0 +1,175 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.py-3 {
+    padding: 30px 0 12px !important;
+    font-family: 'Instrument Serif', serif;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+a.nav-link.text-white.fs-5 {
+    font-size: 30px !important;
+    font-family: 'Instrument Serif', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Efecto hover: subrayado con animación + cambio de color */
+a.nav-link.text-white.fs-5:hover {
+    color: #feefd4 !important; /* un dorado suave */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+a.nav-link.text-white.fs-5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 0;
+    height: 2px;
+    background-color: #feefd4;
+    transition: width 0.3s ease;
+}
+
+a.nav-link.text-white.fs-5:hover::after {
+    width: 100%;
+}
+
+a.btn.navbar {
+    font-size: 25px;
+    border-radius: 50px;
+    width: 45%;
+    justify-content: center;
+    padding: 5px 10px;
+}
+
+.navbar>.container-fluid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+    padding: 0;
+}
+
+.d-flex {
+    display: flex!important;
+    width: 100%;
+    justify-content: center;
+}
+
+.presentacion {
+    background-color: rgba(0, 0, 0, 0.50);
+    margin: 2% 12%;
+    border-radius: 20px;
+    padding: 50px 20px;
+    font-family: 'Italianno', cursive;
+    text-align: center;
+    color: white;
+    width: 62%;
+}
+
+.presentacion h1{
+    font-size: 100px;
+    margin: 0 0 -10px;
+}
+
+.presentacion h2 {
+    font-size: 50px;
+}
+
+.presentacion p {
+    font-family: 'Instrument Serif', serif;
+    margin-top: 5%;
+}
+
+a.btn.btn-danger {
+    background: #C00000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.btn.btn-danger:hover {
+    background-color: #a00000; /* Un rojo más oscuro para efecto "presionado" */
+    transform: scale(1.05); /* Ligeramente más grande */
+    box-shadow: 0 0 10px rgba(192, 0, 0, 0.4); /* Sombra roja tenue */
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    .navbar>.container-fluid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 0;
+        row-gap: 30px;
+    }
+
+    .d-flex {
+        display: flex!important;
+        width: 50%;
+        justify-content: center;
+    }
+
+    .presentacion {
+        width: initial !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar>.container-fluid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 0;
+        row-gap: 30px;
+    }
+
+    .d-flex {
+        display: flex!important;
+        justify-content: center;
+    }
+
+    .presentacion {
+        width: initial !important;
+        margin: 5%;
+        padding: 10px;
+    }
+
+    .d-flex {
+    width: 100%;
+    }
+
+    a.btn {
+    width: 40%;
+    }
+
+    .presentacion h1 {
+    font-size: 70px;
+    }
+
+    .presentacion h2 {
+    font-size: 35px;
+    }
+
+    .presentacion p {
+    font-size: 20px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    a.btn {
+        font-size: 18px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    a.btn {
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 570px) and (max-width: 767px) {
+    .d-flex {
+        display: flex!important;
+        width: 70%;
+        justify-content: center;
+    }
+}

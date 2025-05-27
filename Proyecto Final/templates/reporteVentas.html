@@ -1,0 +1,72 @@
+{% load static %}
+{% block content %}
+    <div class="reporte">
+        <div class="cabezera">
+            <img src="{% static 'images/logo.png' %}">
+            <div class="ventas_titulo">
+                <h1>Reporte De Ventas</h1>
+                <p>Ristorante Ramos</p>
+            </div>
+        </div>
+        <div class="reportetabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoría Ingresos</th>
+                        <th>Hoy</th>
+                        <th>Total Semana</th>
+                        <th>Total Mes</th>
+                        <th>Prmedio Mensual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ingresos Entrantes</td>
+                        <td>320,00€</td>
+                        <td>12.030,00€</td>
+                        <td>32.030,00€</td>
+                        <td>30,25%</td>
+                    </tr>
+                    <tr>
+                        <td>Ingresos Bebidas</td>
+                        <td>215,00€</td>
+                        <td>9.306,00€</td>
+                        <td>27.090,00€</td>
+                        <td>25,59%</td>
+                    </tr>
+                    <tr>
+                        <td>Ingresos Postres</td>
+                        <td>195,00€</td>
+                        <td>5.806,00€</td>
+                        <td>20.806,00€</td>
+                        <td>19,65%</td>
+                    </tr>
+                    <tr>
+                        <td>Ingresos Platos<br>Principales</td>
+                        <td>1.320,00€</td>
+                        <td>6.500,00€</td>
+                        <td>25.100,00€</td>
+                        <td>23,70%</td>
+                    </tr>
+                    <tr>
+                        <td>Otros Ingresos</td>
+                        <td>95,00€</td>
+                        <td>210,00€</td>
+                        <td>843,00€</td>
+                        <td>0,81%</td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <th style="color: black">2.145,00€</th>
+                        <th style="color: black">33.852,00€</th>
+                        <th style="color: black">105.869,00€</th>
+                        <th style="color: black">100%</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            
+        
+    
+    </div>
+{% endblock %}

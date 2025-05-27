@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form id="form-foto" method="POST" enctype="multipart/form-data" action="{% url 'actualizar_foto' %}" style="display: none;">
+  {% csrf_token %}
+  <input type="file" id="input-foto" name="foto" accept="image/*" onchange="document.getElementById('form-foto').submit();">
+</form>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{% static 'images/fondo_contacto.jpg' %}'); background-size: cover;">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="{% static 'images/logo.png' %}" alt="Logo" width="150" height="150">
+        </a>
+    
+        <!-- Menú colapsable -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Enlaces -->
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="{% url 'home' %}">INICIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="{% url 'carta' %}">CARTA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="{% url 'contacto' %}">CONTACTO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="{% url 'acerca_de' %}">ACERCA DE</a>
+                </li>
+            </ul>
+        </div>
+            <!-- Botones -->
+            <div class="d-flex">
+            {% if user.is_authenticated %}
+                <a href="#" class="btn d-flex align-items-center text-light p-0 border-0 bg-transparent cuenta"
+                   data-bs-toggle="modal" data-bs-target="#perfilModal">
+                  {% if user.foto %}
+                    <img src="{{ user.foto.url }}" alt="Foto de perfil" class="rounded-circle me-2" style="width: 35px; height: 35px; object-fit: cover;">
+                  {% else %}
+                    <i class="bi bi-person-circle fs-4 me-2"></i>
+                  {% endif %}
+                  <span>{{ user.nombre }}</span>
+                </a>
+            {% else %}
+              <a href="{% url 'log_in_page' %}" class="btn btn-outline-light me-2 d-flex align-items-center navbar">
+                <i class="bi bi-person-fill me-1"></i> CLIENTE
+              </a>
+            {% endif %}
+            <a href="{% url 'carta' %}" class="btn btn-danger navbar">HAZ TU PEDIDO</a>
+            </div>
+        </div>
+    
+        <!-- Título -->
+        <div class="presentacion_mod">
+            <h1>CONTACTO</h1>
+        </div>
+    </nav>
+    
+    <div class="main-content">
+    <!--Información con el horario y el contacto del restaurante-->
+        <section class="box-info">
+            <div class="info">
+                <h2 class="titulo">Dirección</h2>
+                <p>C. Esperanza de Triana, 36</p>
+                <p>41010, Sevilla</p>
+                <p>(+34) 954 16 32 48</p>
+            </div>
+            <div class="info">
+                <h2 class="titulo">Horario</h2>
+                <p>De Lunes a Domingos:</p>
+                <p>13:00h - 16:00h</p>
+                <p>20:00h - 23:30h</p>
+            </div>
+        </section>
+        
+        <!--Mapa interactivo-->
+        <section class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2869.090878856353!2d-6.006322024669216!3d37.379221434847814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c3ff0273ca1%3A0xb89871641fa1f441!2sC.%20Esperanza%20de%20Triana%2C%2036%2C%2041010%20Sevilla!5e1!3m2!1ses!2ses!4v1744392825150!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    
+        <!--Formulario-->
+        <section class="formulario">
+            <h2 class="titulo">Contacta con Nosotros</h2>
+            <p>En nombre de nuestro restaurante, queremos agradecerte por tu interés en contactarnos. Estamos encantados de responder a tus preguntas y recibir tus comentarios.</p>
+            <form action="" method="post">
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="floatingNombre" type="text" name="nombre" placeholder="Introduce tu nombre" required>
+                    <label for="floating">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="floatingEmail" type="email" name="correo" placeholder="Introduce tu correo" required>
+                    <label for="floating">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="floatingTelefono" type="text" name="teléfono" placeholder="Introduce tu teléfono" required>
+                    <label for="floating">Teléfono</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="floatingAsunto" name="asunto" placeholder="Añade la información que consideres" required style="height: 150px;"></textarea>
+                    <label for="floating">Asunto</label>
+                </div>
+            </form>
+
+            
+            <!--Botón enviar-->
+            <div class="boton_enviar">
+                <button>Enviar</button>
+            </div>
+            
+            <div class="theme-toggle" id="toggle-theme">
+                <div class="slider">
+                    <img id="theme-icon" src="{% static 'images/sun.png' %}" alt="Ícono tema">
+                </div>
+            </div>
+            
+        </section>
+    </div>
+    
+<!-- Modal para mostrar y editar el perfil -->
+<div class="modal fade" id="editarPerfilModal" tabindex="-1" aria-labelledby="editarPerfilModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarPerfilModalLabel">Editar Perfil</h5>
+          <button type="button" class="btn-close" id="cerrarEditarPerfilBtn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{% url 'editar_perfil' %}">
+          {% csrf_token %}
+          
+          <!-- Campos del formulario -->
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ user.nombre }}">
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ user.telefono }}">
+          </div>
+          <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" value="{{ user.direccion }}">
+          </div>
+          
+          <!-- Botón para guardar cambios -->
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="cerrarFooterEditarPerfilBtn" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para mostrar el perfil del usuario -->
+<div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="perfilModalLabel">Perfil del Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <!-- BOTÓN FOTO PERFIL -->
+        <button class="btn p-0 border-0 bg-transparent" onclick="document.getElementById('input-foto').click();">
+          {% if user.foto %}
+            <img src="{{ user.foto.url }}" alt="Foto de perfil" id="preview-foto"
+                 class="rounded-circle me-2" style="width: 250px; height: 250px; object-fit: cover;">
+          {% else %}
+            <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                 style="width: 250px; height: 250px;">
+              <i class="bi bi-camera text-white"></i>
+            </div>
+          {% endif %}
+        </button>
+        <p><strong>Nombre:</strong> {{ user.nombre }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Teléfono:</strong> {{ user.telefono }}</p>
+        <p><strong>Dirección:</strong> {{ user.direccion }}</p>
+      
+        {% if user.rol == 'administrador' %}
+        <a href="{% url 'empleados' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Administrador</a>
+        {% endif %}
+        
+        {% if user.rol == 'cocinero' or user.rol == 'administrador' %}
+        <a href="{% url 'cocinero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Cocinero</a>
+        {% endif %}
+        
+        {% if user.rol == 'camarero' or user.rol == 'administrador' %}
+        <a href="{% url 'camarero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Camarero</a>
+        {% endif %}
+
+        <a href="{% url 'logout' %}" class="btn btn-danger logout">Cerrar sesión</a>
+      </div>
+      <div class="modal-footer">
+        <!-- Botón para abrir el modal de editar y cerrar el modal actual -->
+        <button href="#" data-bs-toggle="modal" data-bs-target="#editarPerfilModal" data-bs-dismiss="modal" class="btn btn-warning logout">Editar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% include "footer.html" %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const editarPerfilModal = document.getElementById('editarPerfilModal');
+    const cerrarHeaderBtn = document.getElementById('cerrarEditarPerfilBtn'); // Botón de la cabecera
+    const cerrarFooterBtn = document.getElementById('cerrarFooterEditarPerfilBtn'); // Botón del footer
+
+    function reabrirPerfilModal() {
+      // Elimina backdrop manualmente si existe
+      document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+
+      const perfilModal = new bootstrap.Modal(document.getElementById('perfilModal'));
+      perfilModal.show();
+    }
+
+    function manejarCierreYReapertura(btn) {
+      if (btn && editarPerfilModal) {
+        btn.addEventListener('click', function () {
+          editarPerfilModal.addEventListener('hidden.bs.modal', function handler() {
+            editarPerfilModal.removeEventListener('hidden.bs.modal', handler);
+            reabrirPerfilModal();
+          });
+        });
+      }
+    }
+
+    // Aplica el manejo a ambos botones de cierre
+    manejarCierreYReapertura(cerrarHeaderBtn);
+    manejarCierreYReapertura(cerrarFooterBtn);
+  });
+</script>    
+        
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const toggle = document.getElementById("toggle-theme");
+                const icon = document.getElementById("theme-icon");
+                const container = document.querySelector(".main-content");
+            
+                function updateUI() {
+                    const isDark = container.classList.contains("dark-mode");
+                    icon.src = isDark 
+                        ? "{% static 'images/moon.png' %}" 
+                        : "{% static 'images/sun.png' %}";
+                }
+            
+                // Al cargar, aplica el modo oscuro si está guardado
+                if (localStorage.getItem("theme") === "dark") {
+                    container.classList.add("dark-mode");
+                }
+            
+                updateUI();
+            
+                // Al hacer clic, cambia el modo y guarda en localStorage
+                toggle.addEventListener("click", () => {
+                    container.classList.toggle("dark-mode");
+                    const isDark = container.classList.contains("dark-mode");
+                    localStorage.setItem("theme", isDark ? "dark" : "light");
+                    updateUI();
+                    });
+            });
+
+
+    </script>
+{% endblock %}

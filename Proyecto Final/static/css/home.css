@@ -1,0 +1,1163 @@
+/*Navbar*/
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.py-3 {
+    padding: 30px 0 12px !important;
+    font-family: 'Instrument Serif', serif;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+a.nav-link.text-white.fs-5 {
+    font-size: 30px !important;
+    font-family: 'Instrument Serif', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Efecto hover: subrayado con animación + cambio de color */
+a.nav-link.text-white.fs-5:hover {
+    color: #feefd4 !important; /* un dorado suave */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+a.nav-link.text-white.fs-5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 0;
+    height: 2px;
+    background-color: #feefd4;
+    transition: width 0.3s ease;
+}
+
+a.nav-link.text-white.fs-5:hover::after {
+    width: 100%;
+}
+
+a.btn.navbar {
+    font-size: 24px !important;
+    border-radius: 50px;
+    width: 45%;
+    justify-content: center;
+    padding: 5px 10px;
+}
+
+.navbar>.container-fluid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+}
+
+.d-flex {
+    display: flex!important;
+    width: 100%;
+    justify-content: center;
+}
+
+.presentacion {
+    background-color: rgba(0, 0, 0, 0.50);
+    margin: 2% 12%;
+    border-radius: 20px;
+    padding: 50px 20px;
+    font-family: 'Italianno', cursive;
+    text-align: center;
+    color: white;
+    width: 62%;
+}
+
+.presentacion h1{
+    font-size: 100px;
+    margin: 0 0 -10px;
+}
+
+.presentacion h2 {
+    font-size: 50px;
+}
+
+.presentacion p {
+    font-family: 'Instrument Serif', serif;
+    margin-top: 5%;
+}
+
+a.btn.btn-danger {
+    background: #C00000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.btn.btn-danger:hover {
+    background-color: #a00000; /* Un rojo más oscuro para efecto "presionado" */
+    transform: scale(1.05); /* Ligeramente más grande */
+    box-shadow: 0 0 10px rgba(192, 0, 0, 0.4); /* Sombra roja tenue */
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    .navbar>.container-fluid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 0;
+        row-gap: 30px;
+    }
+
+    .d-flex {
+        display: flex!important;
+        width: 50%;
+        justify-content: center;
+    }
+
+    .presentacion {
+        width: initial !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar>.container-fluid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 0;
+        row-gap: 30px;
+    }
+
+    .d-flex {
+        display: flex!important;
+        justify-content: center;
+    }
+
+    .presentacion {
+        width: initial !important;
+        margin: 5%;
+        padding: 10px;
+    }
+
+    .d-flex {
+    width: 100%;
+    }
+
+    a.btn.navbar {
+    width: 40%;
+    }
+
+    .presentacion h1 {
+    font-size: 70px;
+    }
+
+    .presentacion h2 {
+    font-size: 35px;
+    }
+
+    .presentacion p {
+    font-size: 20px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    a.btn.navbar {
+        font-size: 18px !important;
+        width: 100%;
+        margin: 0 10%;
+    }
+}
+
+@media (max-width: 400px) {
+    a.btn.navbar {
+        font-size: 19px !important;
+    }
+}
+
+@media (min-width: 570px) and (max-width: 767px) {
+    .d-flex {
+        display: flex!important;
+        width: 70%;
+        justify-content: center;
+    }
+}
+/*Parte 1*/
+.parte-roja-verde{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.fondo-rojo{
+    width: 150%;
+    height: 500px;
+    background-color: rgba(192, 0, 0, 1);
+}
+
+.fondo-verde{
+    width: 150%;
+    height: 500px;
+    background-color: rgba(3, 67, 55, 1);
+    position: relative;
+    z-index: 300;
+}
+
+.contenedor_home, .contenedor_home2{
+    height: 425px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 3%;
+    border-radius: 20px;
+    box-shadow: 1px 15px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    background-color: rgba(254, 250, 224, 1);
+    width: 175%;
+}
+
+.contenedor_home{
+    margin-left: -22.5%;
+    margin-right: 22.5%;
+}
+
+.contenedor_home2{
+    margin-left: 22.5%;
+    margin-right: -22.5%;
+    position: relative;
+    z-index: 1000;
+}
+
+.contenedor_texto h6, .contenedor_texto2 h6{
+    color: rgba(3, 67, 55, 1);
+    font-size: 30px;
+    font-family: "Instrument Serif", serif;
+}
+
+.contenedor_texto h3, .contenedor_texto2 h3{
+    color: #D4A373;
+    font-size: 60px;
+    font-family: 'Italianno', cursive;
+    margin-bottom: 2%;
+}
+
+.contenedor_texto p, .contenedor_texto2 p{
+    color: rgba(92, 92, 92, 1);
+    font-family: "Instrument Serif", serif;
+}
+
+.boton_inicio_home, .boton_inicio_home2{
+    text-align: center;
+    width: 150px;
+    border: 2px solid rgba(212, 163, 115, 1);
+    padding: 3%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.boton_inicio_home{
+    margin-left: 125%;
+}
+
+.boton_inicio_home2{
+    margin-left: -75%;
+}
+
+.boton_inicio_home:hover,
+.boton_inicio_home2:hover{
+    background-color: #D4A373;
+}
+
+.contenedor_fotos{
+    display: flex;
+    height: 100px;
+}
+
+.contenedor_fotos2{
+    display: flex;
+    height: 100px;
+}
+
+.contenedor_fotos img{
+    width: 175px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 1px 15px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.contenedor_fotos img:hover, .contenedor_fotos2 img:hover{
+    transform: translateY(-15px);
+}
+
+
+.contenedor_fotos2 img{
+    width: 175px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 1px 15px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.foto_pasta{
+    position: relative;
+    top: 25px;
+    left: 45px;
+}
+
+.foto_manualidades{
+    position: relative;
+    bottom: 100px;
+    left: 75px;
+}
+
+.foto_pizza1{
+    position: relative;
+    top: 25px;
+    right: 45px;
+}
+
+.foto_pizza2{
+    position: relative;
+    bottom: 100px;
+    right: 75px;
+}
+
+@media (min-width: 1364px) {
+    .boton_inicio_home, .boton_inicio_home2 {
+        margin-top: 5%;
+    }
+}
+
+@media (max-width: 1364px) {
+    .boton_inicio_home, .boton_inicio_home2{
+        margin-top: -4%;
+    }
+
+    .foto_manualidades, .foto_pizza2{
+        bottom: 90px;
+    }
+}
+
+@media (max-width: 1230px) {
+    .contenedor_home2 {
+        margin-left: 19%;
+        margin-right: -19%;
+    }
+
+    .boton_inicio_home{
+        margin-top: -5%;
+    }
+
+    .boton_inicio_home2{
+        margin-top: -8%;
+    }
+
+    .contenedor_home, .contenedor_home2 {
+        width: initial;
+    }
+}
+
+@media (max-width: 1145px) {
+    .boton_inicio_home, .boton_inicio_home2{
+        margin-top: -10%;
+    }
+    .foto_manualidades, .foto_pizza2{
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .boton_inicio_home{
+        margin-top: -15%;
+    }
+}
+
+@media (max-width: 1069px) {
+
+    .boton_inicio_home{
+        margin-top: -20%;
+    }
+
+    .boton_inicio_home2{
+        margin-top: -20%;
+    }
+
+    .contenedor_texto2 h3{
+        font-size: 55px;
+    }
+
+    .foto_manualidades, .foto_pizza2{
+        bottom: 70px;
+    }
+
+    .contenedor_home2 {
+        margin-left: 17%;
+        margin-right: -17%;
+    }
+}
+
+@media (max-width: 1007px){
+    .contenedor_texto2 h3{
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 980px) {
+    .boton_inicio_home{
+        margin-top: -35%;
+    }
+
+    .boton_inicio_home2{
+        margin-top: -30%;
+    }
+
+    .foto_manualidades, .foto_pizza2{
+        bottom: 60px;
+    }
+
+    .contenedor_home2 {
+        margin-left: 10%;
+        margin-right: -10%;
+    }
+}
+
+@media (max-width: 971px) {
+    .parte-roja-verde{
+        flex-direction: column;
+    }
+
+    .fondo-rojo, .fondo-verde{
+        display: none;
+    }
+
+    .contenedor_home, .contenedor_home2{
+        margin: 0;
+        padding: 5%;
+        box-shadow: none;
+        height: 300px;
+    }
+
+    .contenedor_fotos img, .contenedor_fotos2 img{
+        width: 150px;
+        height: 200px;
+    }
+
+    .foto_pasta{
+        top: 0;
+        left: 10px;
+    }
+
+    .foto_pizza1{
+        top: 0;
+        right: 10px;
+    }
+
+    .foto_manualidades{
+        bottom: 50px;
+        left: 25px;
+    }
+
+    .foto_pizza2{
+        bottom: 50px;
+        right: 25px;
+    }
+
+    .boton_inicio_home{
+        margin-left: 105%;
+        margin-top: -5%;
+        font-size: 15px;
+        width: 100px;
+    }
+
+    .boton_inicio_home2{
+        margin-left: -50%;
+        margin-top: -10%;
+        font-size: 15px;
+        width: 100px;
+    }
+
+    .contenedor_home, .contenedor_home2 {
+        width: initial;
+    }
+}
+
+@media (max-width: 828px){
+    .boton_inicio_home{
+        margin-top: -20%;
+    }
+
+    .boton_inicio_home2{
+        margin-top: -15%;
+    }
+}
+
+@media (max-width: 745px){
+    .contenedor_fotos img, .contenedor_fotos2 img{
+        width: 125px;
+        height: 175px;
+    }
+
+    .boton_inicio_home, .boton_inicio_home2{
+        margin-top: -12.5%;
+    }
+
+    .contenedor_texto p, .contenedor_texto2 p{
+        font-size: 12.5px;
+    }
+
+}
+
+@media (max-width: 690px){
+    .contenedor_fotos img, .contenedor_fotos2 img{
+        width: 100px;
+        height: 150px;
+    }
+
+    .foto_pasta{
+        top: 20px;
+        left: 5px;
+    }
+
+    .foto_pizza1{
+        top: 20px;
+        right: 5px;
+    }
+
+    .foto_manualidades{
+        bottom: 20px;
+        left: 15px;
+    }
+
+    .foto_pizza2{
+        bottom: 20px;
+        right: 15px;
+    }
+
+    .boton_inicio_home, .boton_inicio_home2{
+        margin-top: -12.5%;
+    }
+}
+
+@media (max-width: 634px){
+    .boton_inicio_home, .boton_inicio_home2{
+        margin-top: -20%;
+    }
+}
+
+@media (max-width: 598px){
+    .contenedor_home{
+        height: 200px;
+    }
+
+    .contenedor_home2{
+        height: 200px;
+    }
+
+    .contenedor_fotos2{
+        width: 175px;
+    }
+
+    .contenedor_texto2{
+        width: 350px;
+    }
+
+    .contenedor_texto h6, .contenedor_texto2 h6{
+        font-size: 20px;
+    }
+
+    .contenedor_texto h3, .contenedor_texto2 h3{
+        font-size: 40px;
+    }
+
+    .contenedor_texto p, .contenedor_texto2 p{
+        font-size: 10px;
+    }
+
+    .contenedor_fotos img, .contenedor_fotos2 img{
+        width: 75px;
+        height: 100px;
+    }
+
+    .boton_inicio_home{
+        margin-top: -12.5%;
+        width: 75px;
+    }
+
+    .boton_inicio_home2{
+        margin-top: -17.5%;
+        width: 75px;
+    }
+}
+
+@media (max-width: 526px) {
+    .boton_inicio_home{
+        margin-top: -17.5%;
+    }
+
+     .boton_inicio_home2{
+         margin-top: -30%;
+     }
+
+    .contenedor_fotos2{
+        width: 175px;
+    }
+
+    .contenedor_texto2{
+        width: 250px;
+    }
+}
+
+@media (max-width: 476px) {
+    .contenedor_home,
+    .contenedor_home2{
+        height: 225px;
+    }
+
+    .boton_inicio_home{
+        margin-top: -25%;
+    }
+
+    .boton_inicio_home2{
+        margin-top: -30%;
+    }
+}
+
+@media (max-width: 400px) {
+    .contenedor_home{
+        height: 200px;
+    }
+
+    .boton_inicio_home, .boton_inicio_home2{
+        margin-top: -5%;
+    }
+
+    .foto_pasta{
+        top: 35px;
+    }
+
+    .foto_pizza1{
+        top: 35px;
+    }
+
+    .foto_manualidades{
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .foto_pizza2{
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .contenedor_texto h6, .contenedor_texto2 h6{
+        font-size: 15px;
+    }
+
+    .contenedor_texto h3, .contenedor_texto2 h3{
+        font-size: 30px;
+    }
+
+    .contenedor_texto p, .contenedor_texto2 p{
+        font-size: 7.5px;
+    }
+
+    .contenedor_fotos img, .contenedor_fotos2 img{
+        width: 50px;
+        height: 75px;
+    }
+}
+
+@media (max-width: 350px) {
+    .boton_inicio_home{
+        margin-top: -10%;
+    }
+
+    .boton_inicio_home2{
+        margin-top: -15%;
+    }
+}
+/*Parte 2*/
+h3.contenedor_texto{
+    color: #D4A373;
+    font-size: 50px;
+    font-family: 'Italianno', cursive;
+    margin-bottom: 2%;
+}
+
+h1.title1-v1 {
+    margin-top: .5rem;
+    font-family: 'Italianno', cursive;
+    font-size: 50px;
+    text-align: center;
+    color: #C00000;
+    margin-bottom: 0 !important;
+}
+
+h2.title2 {
+    font-family: 'Lora', serif;
+    font-weight: bold !important;
+    color: #412000;
+    font-size: 50px;
+    position: relative;
+    top: -25px;
+}
+
+.img-carrusel {
+    width: 400px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    height: 377px;
+    object-fit: cover;
+    position: relative;
+    left: 60px;
+    z-index: 1;
+}
+
+.descripcion-carrusel {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 350px;
+    text-align: left;
+    font-family: 'Instrument Serif', serif;
+    position: relative;
+    z-index: 2;
+    top: 160px;
+}
+
+.texto-plato {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    color: #412000;
+}
+
+/* Estilo de flechas */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+}
+
+/* Espaciado opcional para separarlas del borde */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.contenedor-general .carousel-item {
+    margin-bottom: 20%;
+    margin-top: -6%;
+}
+
+.d-flex.flex-column.flex-md-row.justify-content-center.align-items-center.gap-4 {
+    width: initial;
+    position: relative;
+    top: 100px;
+    margin-bottom: 20%;
+    margin-top: -6%;
+}
+
+button.carousel-control-next {
+    top: -130px;
+}
+
+button.carousel-control-prev {
+    top: -130px;
+}
+
+/* Portátiles medianos (hasta 1280px) */
+@media (max-width: 1279px) {
+    .contenedor-general .carousel-item {
+        margin-top: -8%;
+    }
+}
+
+/* Tablets (hasta 1024px) */
+@media (max-width: 1023px) {
+    .contenedor-general .carousel-item {
+        margin-bottom: 23%;
+        margin-top: -10%;
+    }
+
+    .img-carrusel {
+    width: 300px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    height: 283px;
+    object-fit: cover;
+    position: relative;
+    left: 60px;
+    z-index: 1;
+    }
+
+    .descripcion-carrusel {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: left;
+    font-family: 'Instrument Serif', serif;
+    position: relative;
+    z-index: 2;
+    top: 105px;
+    }
+
+    .d-flex.flex-column.flex-md-row.justify-content-center.align-items-center.gap-4 {
+        margin-bottom: 25%;
+    }
+}
+
+/* Móviles grandes (hasta 768px) */
+@media (max-width: 767px) {
+    img.img-carrusel {
+    position: initial;
+    }
+
+    .descripcion-carrusel.shadow {
+    position: relative;
+    top: -45px;
+    max-width: 250px;
+    }
+
+    h3.contenedor_texto {
+    font-size: 30px;
+    }
+
+    p.texto-plato {
+    font-size: 12px;
+    }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media (max-width: 479px) {
+    .contenedor-general .carousel-item {
+        margin-top: -17%;
+        margin-bottom: 20%;
+    }
+}
+
+@media (max-width: 374px) {
+    img.img-carrusel {
+        position: initial;
+        width: 200px;
+        height: 189px;
+    }
+
+    .descripcion-carrusel.shadow {
+        max-width: 170px;
+    }
+
+    .contenedor-general .carousel-item {
+        margin-top: -18%;
+    }
+
+    h1.title1-v1 {
+        font-size: 30px;
+    }
+
+    h2.title2 {
+        font-size: 30px;
+        top: -15px;
+    }
+
+    .contenedor-general .carousel-item {
+        margin-top: -29%;
+        margin-bottom: 25%;
+    }
+
+    h1.title1-v1 {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1600px) {
+    .d-flex.flex-column.flex-md-row.justify-content-center.align-items-center.gap-4 {
+        top: 295px;
+    }
+}
+/*Parte 3*/
+.contendor-parte3 {
+    margin-bottom: 10%;
+}
+
+body {
+    background-color: rgb(254, 250, 224);
+}
+
+.subtitulo {
+    margin-top: .5rem;
+    font-family: 'Italianno', cursive;
+    font-size: 50px;
+    text-align: center;
+    color: #034337;
+    margin-bottom: 0 !important;
+}
+
+.titulo2 {
+    font-family: 'Lora', serif;
+    font-weight: bold !important;
+    color: #412000;
+    font-size: 50px;
+    position: relative;
+    top: -25px;
+}
+
+/* Imagen de fondo */
+.imagen-restaurante {
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    margin-left: 25rem;
+}
+
+/* Carrusel flotante */
+.card-carrusel {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 20rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.card .cliente {
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* Media queries para diseño responsive */
+@media (max-width: 1180px) {
+    .card-carrusel{
+        margin-left: 5rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .card-carrusel{
+        max-width: 500px;
+        margin-left: 3rem;
+    }
+    .imagen-restaurante {
+        margin-left: 180%;
+        max-width: 90%;
+        max-height: 250px;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Para móviles y pantallas pequeñas (< 768px) */
+@media (max-width: 800px) {
+    .subtitulo {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .subtitulo2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .imagen-restaurante {
+        margin-left: 20rem;
+        max-width: 90%;
+        max-height: 250px;
+        margin-bottom: 1rem;
+    }
+
+    .card-carrusel {
+        width: 100%;
+        margin-left: 1rem;
+        max-width: 300px;
+    }
+
+    .card {
+        padding: 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .card .cliente {
+        font-size: 0.9rem;
+    }
+
+    .position-relative {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 620px) {
+    .contendor-parte3 {
+        flex-direction: column !important;
+        padding-top: 2rem !important;
+    }
+
+    .card-carrusel {
+        position: static !important;
+        transform: none !important;
+        order: -1 !important;
+        margin-bottom: 2rem !important;
+        max-width: 100% !important;
+    }
+
+    .imagen-restaurante {
+        max-width: 100% !important;
+        max-height: 300px !important;
+        margin-top: 1rem !important;
+        margin-left: 0 !important;
+    }
+}
+
+/* Para móviles y pantallas pequeñas (< 480px) */
+@media (max-width: 480px) {
+    .subtitulo {
+        font-size: 2.2rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .card .cliente {
+        font-size: 0.9rem;
+    }
+}
+
+/*Parte 4*/
+.fondo_texto_pizza{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/pizza_fondo_home4.png');
+    padding: 3%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    background-position: 20% 80%;
+}
+
+.fondo_texto_pizza h3{
+    font-family: 'Italianno', cursive;
+    color: #D4A373;
+    font-size: 50px;
+}
+
+.fondo_texto_pizza h1{
+    color: white;
+    padding-bottom: 2%;
+}
+
+.bloques_parte4{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.bloque_parte4{
+    background-color: rgba(3, 67, 55, 1);
+    width: 600px;
+    height: 300px;
+    border-radius: 20px;
+    padding-top: 0.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: -2%;
+    margin-bottom: 5%;
+}
+
+.bloque_parte4 img{
+    width: 75px;
+    background-color: #feefd4;
+    border-radius: 50px;
+}
+
+.bloque_parte4 h3{
+    color: rgba(212, 163, 115, 1);
+    font-size: 30px;
+}
+
+.bloque_parte4 p{
+    color: rgba(255, 255, 255, 1);
+    font-family: "Instrument Serif", serif;
+}
+
+@media (max-width: 1210px) {
+    .bloque_parte4{
+        width: 500px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 1025px) {
+    .bloque_parte4{
+        width: 450px;
+        height: 325px;
+    }
+}
+
+@media (max-width: 925px){
+    .bloque_parte4{
+        width: 400px;
+        height: 300px;
+    }
+
+    .bloque_parte4 img{
+        width: 50px;
+    }
+
+    .bloque_parte4 h3{
+        font-size: 25px;
+    }
+
+    .bloque_parte4 p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 815px){
+    .bloques_parte4{
+        flex-direction: column;
+    }
+
+    .bloque_parte4{
+        width: 350px;
+        height: 225px;
+    }
+
+    .bloque_parte4 img{
+        width: 40px;
+    }
+
+    .bloque_parte4 h3{
+        font-size: 20px;
+    }
+
+    .bloque_parte4 p{
+        font-size: 12.5px;
+    }
+}
+
+@media (max-width: 370px) {
+    .fondo_texto_pizza h3{
+        font-size: 40px;
+    }
+
+    .bloque_parte4{
+        width: 300px;
+        height: 200px;
+    }
+
+    .bloque_parte4 img{
+        width: 30px;
+    }
+
+    .bloque_parte4 h3{
+        font-size: 15px;
+    }
+
+    .bloque_parte4 p{
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,160 @@
+/* Estilos para el div de información horario-contacto */
+.info{
+    font-family: 'Instrument Serif', serif;
+    text-align: center;
+}
+.box-info{
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    padding-top: 5%;
+}
+.titulo{
+    font-family: 'Italianno', cursive;
+    color: rgb(212,163,115);
+    font-size: 60px;
+}
+.info p{
+    color: rgb(122,121,121);
+    font-size: 20px;
+}
+
+/* Estilos para el mapa */
+.map{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.map iframe{
+    width: 80%;
+}
+
+/* Estilos formulario */
+.formulario{
+    padding: 5%;
+    font-family: "Instrument Serif", serif;
+    font-size: 20px;
+}
+
+/* Estilo para los inputs */
+.form-control {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Estilo al hacer foco */
+.form-control:focus {
+    border-color: rgb(139,94,60);
+    box-shadow: 0 0 0 0.25rem rgba(139, 94, 60, 0.25);
+    background-color: rgb(255,255,255);
+    color: rgb(0,0,0);
+}
+
+/* Estilo para los labels flotantes */
+.form-floating > label[for="floating"] {
+    padding: 0;
+    margin: 10px;
+    background: transparent;
+    height: 25px !important;
+    color:black !important;
+}
+
+/* Evita que los labels se corten o se desplacen mal */
+.form-floating {
+    position: relative;
+}
+
+.form-floating > .form-control,
+.form-floating > textarea {
+    height: auto;
+    padding: 1rem .75rem .25rem;
+}
+
+/* Estilos para el botón de enviar */
+.boton_enviar button{
+    border-radius: 20px;
+    padding: 10px;
+    width: 25%;
+    background-color: rgb(192,0,0);
+    border:0;
+    color:rgb(254,250,224);
+    font-family: "Instrument Serif", serif;
+    font-size: 20px;
+    margin-top: 5%;
+    transition: all 0.3s ease;
+}
+.boton_enviar button:hover{
+    background-color: rgb(150, 0, 0);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.boton_enviar{
+    display: flex;
+    justify-content: center;
+}
+
+.theme-toggle {
+    width: 60px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .slider {
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s;
+  }
+
+  .slider img {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Estado oscuro */
+.main-content.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.main-content.dark-mode .info p {
+    color: white !important;
+}
+
+.main-content.dark-mode .theme-toggle {
+    background-color: #444;
+}
+
+.main-content.dark-mode .slider {
+    left: 32px;
+}
+@media (max-width: 750px){
+    .titulo{
+        font-size: 40px;
+    }
+
+    .info p,  .titulo p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 471px){
+    .titulo{
+        font-size: 30px;
+    }
+
+    .info p, .titulo p{
+        font-size: 10px;
+    }
+}

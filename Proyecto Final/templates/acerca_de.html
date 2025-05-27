@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    
+    <header>
+        <a href="{% url 'home' %}"><h1 class="logo">Ristorante Ramos</h1></a>
+        <p class="slogan">Donde la tradición italiana se encuentra con la innovación culinaria</p>
+    </header>
+    
+    <section class="historia">
+        <div class="container">
+            <h2 class="section-title">Nuestra Historia</h2>
+            <div class="historia-content">
+                <div class="historia-text">
+                    <p>Fundada en 1985 por el chef Giancarlo Rossi, Trattoria dell'Arte comenzó como un pequeño establecimiento familiar en el corazón de Florencia. Con recetas transmitidas de generación en generación, rápidamente ganó reconocimiento por su auténtica cocina toscana.</p>
+                    <p>En 2005, su hijo Marco Rossi trasladó el concepto a Sevilla, manteniendo la esencia familiar pero incorporando técnicas modernas que han convertido a nuestro restaurante en un referente de la gastronomía italiana en España.</p>
+                    <p>Hoy, con más de 35 años de historia, continuamos honrando nuestras raíces mientras innovamos para ofrecer una experiencia culinaria única.</p>
+                </div>
+                <div class="historia-img">
+                    <img src="{% static 'images/acerca_de_sala_principal.png' %}" alt="Fundador del restaurante">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="filosofia">
+        <div class="container">
+            <h2 class="section-title">Nuestra Filosofía Culinaria</h2>
+            
+            <div class="pilares-container">
+                <div class="pilar">
+                    <div class="pilar-inner">
+                        <div class="pilar-front">
+                            <i class="fas fa-seedling pilar-icon"></i>
+                            <h3 class="pilar-title">Ingredientes Excepcionales</h3>
+                            <p class="pilar-desc">Selección de los mejores productos de Italia y mercados locales</p>
+                        </div>
+                        <div class="pilar-back">
+                            <i class="fas fa-seedling pilar-icon"></i>
+                            <p class="pilar-desc">Trabajamos directamente con productores italianos y agricultores locales para garantizar la máxima frescura y autenticidad en cada ingrediente.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pilar">
+                    <div class="pilar-inner">
+                        <div class="pilar-front">
+                            <i class="fas fa-heart pilar-icon"></i>
+                            <h3 class="pilar-title">Pasión por la Tradición</h3>
+                            <p class="pilar-desc">Técnicas centenarias con un toque contemporáneo</p>
+                        </div>
+                        <div class="pilar-back">
+                            <i class="fas fa-heart pilar-icon"></i>
+                            <p class="pilar-desc">Respetamos las recetas tradicionales mientras innovamos con técnicas modernas, creando una experiencia gastronómica única.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pilar">
+                    <div class="pilar-inner">
+                        <div class="pilar-front">
+                            <i class="fas fa-utensils pilar-icon"></i>
+                            <h3 class="pilar-title">Experiencia Completa</h3>
+                            <p class="pilar-desc">Cada detalle cuenta en nuestra mesa</p>
+                        </div>
+                        <div class="pilar-back">
+                            <i class="fas fa-utensils pilar-icon"></i>
+                            <p class="pilar-desc">Desde la presentación hasta el servicio, cuidamos cada aspecto para ofrecer una experiencia memorable que va más allá de la comida.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="galeria-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Espacio</h2>
+            <div class="galeria">
+                <div class="galeria-item">
+                    <img src="{% static 'images/acerca_de_sala_principal.png' %}" alt="Sala principal">
+                    <div class="overlay">
+                        <h3>Sala Principal</h3>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="{% static 'images/acerca_de_terraza.png' %}" alt="Terraza">
+                    <div class="overlay">
+                        <h3>Terraza</h3>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="{% static 'images/acerca_de_barra_vinos.png' %}" alt="Barra de vinos">
+                    <div class="overlay">
+                        <h3>Barra de Vinos</h3>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="{% static 'images/acerca_de_cocina.png' %}" alt="Cocina">
+                    <div class="overlay">
+                        <h3>Cocina</h3>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="{% static 'images/acerca_de_barra_aperitivos.png' %}" alt="Barra de aperitivos">                    
+                    <div class="overlay">
+                        <h3>Barra de Aperitivos</h3>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="{% static 'images/acerca_de_sala_privada.png' %}" alt="Sala privada">                        
+                    <div class="overlay">
+                        <h3>Sala Privada</h3>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="equipo">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <div class="equipo-grid">
+                <div class="equipo-card">
+                    <div class="equipo-img">
+                        <img src="{% static 'images/acerca_de_cocinero.png' %}" alt="Chef">
+                    </div>
+                    <div class="equipo-info">
+                        <h3>Marco Rossi</h3>
+                        <p>Chef Ejecutivo</p>
+                        <p>Con más de 25 años de experiencia, Marco ha trabajado en los mejores restaurantes de Italia antes de continuar el legado familiar.</p>
+                    </div>
+                </div>
+                <div class="equipo-card">
+                    <div class="equipo-img">
+                        <img src="{% static 'images/acerca_de_chef.png' %}" alt="Sous Chef">
+                    </div>
+                    <div class="equipo-info">
+                        <h3>Javi Conti</h3>
+                        <p>Sous Chef</p>
+                        <p>Especialista en pasta fresca y técnicas tradicionales, Javi aporta autenticidad y creatividad a nuestra cocina.</p>
+                    </div>
+                </div>
+                <div class="equipo-card">
+                    <div class="equipo-img">
+                        <img src="{% static 'images/acerca_de_sumiller.png' %}" alt="Sumiller">
+                    </div>
+                    <div class="equipo-info">
+                        <h3>Luca Bianchi</h3>
+                        <p>Sumiller</p>
+                        <p>Conocedor profundo de los vinos italianos, Luca crea armonías perfectas entre nuestros platos y la mejor selección de vinos.</p>
+                    </div>
+                </div>
+                <div class="equipo-card">
+                    <div class="equipo-img">
+                        <img src="{% static 'images/acerca_de_gerente.png' %}" alt="Gerente">
+                    </div>
+                    <div class="equipo-info">
+                        <h3>Manolo Moretti</h3>
+                        <p>Gerente</p>
+                        <p>Con una amplia experiencia en hostelería, Manolo garantiza que cada visita sea una experiencia excepcional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="premios-section">
+        <div class="container">
+            <h2 class="section-title">Reconocimientos y Premios</h2>
+            
+            <div class="premios-timeline">
+                <!-- Premio 1 -->
+                <div class="premio-item">
+                    <div class="premio-ano">2023</div>
+                    <i class="fas fa-award premio-icon"></i>
+                    <div class="premio-content">
+                        <h3>Estrella Michelin</h3>
+                        <p>Reconocidos con nuestra primera estrella Michelin por nuestra excelencia culinaria y compromiso con la tradición italiana.</p>
+                    </div>
+                </div>
+                
+                <!-- Premio 2 -->
+                <div class="premio-item">
+                    <div class="premio-ano">2022</div>
+                    <i class="fas fa-trophy premio-icon"></i>
+                    <div class="premio-content">
+                        <h3>Mejor Restaurante Italiano - Guía Gourmet</h3>
+                        <p>Galardonados como el mejor restaurante italiano en España por nuestra auténtica cocina toscana y servicio excepcional.</p>
+                    </div>
+                </div>
+                
+                <!-- Premio 3 -->
+                <div class="premio-item">
+                    <div class="premio-ano">2021</div>
+                    <i class="fas fa-medal premio-icon"></i>
+                    <div class="premio-content">
+                        <h3>Premio Excelencia Culinaria</h3>
+                        <p>Reconocimiento a nuestra innovación manteniendo la esencia de la cocina italiana tradicional.</p>
+                    </div>
+                </div>
+                
+                <!-- Premio 4 -->
+                <div class="premio-item">
+                    <div class="premio-ano">2020</div>
+                    <i class="fas fa-star premio-icon"></i>
+                    <div class="premio-content">
+                        <h3>Mejor Carta de Vinos - Revista Vinum</h3>
+                        <p>Premio a nuestra excepcional selección de vinos italianos y conocimiento enogastronómico.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'footer.html' %}
+{% endblock %}

@@ -1,0 +1,12 @@
+.historial_pedidos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.historial_pedidos_content{
+    border: 1px solid #D4A373;
+    border-radius: 20px;
+    padding: 2%;
+    margin-bottom: 5%;
+}

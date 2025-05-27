@@ -1,0 +1,170 @@
+.ver_empleados{
+    text-align: center;
+    font-family: "Instrument Serif", serif;
+}
+
+.ver_empleados h1{
+    text-align: center;
+    font-size: 70px;
+    color: #D4A373;
+    font-family: 'Italianno', cursive;
+    padding: 3%;
+}
+
+.ver_empleados_tabla{
+    text-align: center;
+    border: 2px solid #D4A373;
+    border-radius: 20px;
+    padding: 1%;
+    width: 80%;
+    margin: auto;
+}
+
+.ver_empleados_titulo,
+.ver_articulos_titulo,
+.custom_row1,
+.custom_row2{
+    display: grid;
+    padding: 1rem;
+}
+
+.ver_empleados_titulo, .custom_row1{
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8rem;
+}
+
+.ver_articulos_titulo, .custom_row2{
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.custom_row1 p, .custom_row2 p {
+    white-space: nowrap; /* no permite saltos de línea */
+    overflow: hidden; /* oculta el desbordamiento */
+    text-overflow: ellipsis;
+}
+
+.ver_empleados_titulo h3,
+.ver_articulos_titulo h3{
+    font-size: 40px;
+    color: #D4A373;
+    font-family: 'Italianno', cursive;
+}
+
+.ver_empleados_nombre2{
+    color: #7A7979;
+}
+
+.editar_empleado_btn, .eliminar_empleado_btn{
+    background-color: #960000;
+    border: none;
+    border-radius: 50px;
+    height: 35px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.editar_empleado_btn img, .eliminar_empleado_btn img{
+    width: 25px;
+}
+
+.crear_empleado_btn{
+    background-color: #960000;
+    color: #FEFAE0;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 12px 24px;
+    width: 200px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    font-family: 'Instrument Serif', serif;
+    margin-top: 2%;
+    margin-bottom: 10%;
+}
+
+.crear_empleado_btn:hover {
+    background-color: rgb(202, 48, 48);
+}
+
+@media(max-width: 1240px){
+    .ver_empleados_titulo,
+    .custom_row1{
+        gap:6rem;
+    }
+
+    .ver_articulos_titulo h3{
+        font-size: 30px;
+    }
+
+    .custom_row2 p{
+        width: 75px;
+    }
+}
+
+@media(max-width: 1030px){
+    .ver_empleados_titulo,
+    .custom_row1{
+        gap:4rem;
+    }
+}
+
+@media (max-width: 915px) {
+    .ver_articulos_titulo h3{
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 840px){
+    .ver_empleados_titulo,
+    .custom_row1{
+        gap:2rem;
+    }
+
+    .ver_empleados_titulo h3{
+        font-size: 30px;
+    }
+
+    .custom_row1{
+        font-size: 10px;
+    }
+
+    .editar_empleado_btn img,
+    .eliminar_empleado_btn img{
+        width: 15px;
+    }
+
+    .editar_empleado_btn,
+    .eliminar_empleado_btn{
+        width: 40px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 610px) {
+    .ver_empleados_titulo,
+    .custom_row1{
+        gap:0;
+    }
+
+    .ver_empleados_titulo h3{
+        font-size: 20px;
+    }
+
+    .editar_empleado_btn img,
+    .eliminar_empleado_btn img{
+        width: 10px;
+    }
+
+    .editar_empleado_btn,
+    .eliminar_empleado_btn{
+        width: 30px;
+        height: 20px;
+    }
+
+    .crear_empleado_btn{
+        font-size: 15px;
+        padding: 6px 12px;
+        width: 150px
+    }
+}
+

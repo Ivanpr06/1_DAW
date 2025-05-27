@@ -1,0 +1,110 @@
+{% load static %}
+{% load django_bootstrap5 %}
+{% load bootstrap_icons %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Log in{% endblock %}</title>
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+  <link rel="icon" href="{% static 'images/logo.ico' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/general.css' %}">
+  <link rel="stylesheet" href="{% static 'css/log-in.css' %}">
+</head>
+
+{% block content %}
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+  {% endfor %}
+{% endif %}
+<section class="user" style="background-image: url('/static/images/fondo_log_in.png'); background-size: 100% 100%; background-repeat: no-repeat;">
+  <a href="{% url 'home' %}"><h1>Ristorante Ramos</h1></a>
+  <div class="user_options-container">
+    <div class="user_options-text">
+      <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title">¿No tienes una cuenta?</h2>
+        <p class="user_unregistered-text">¡Únete a nosotros y forma parte de la familia Ramos!</p>
+        <button class="user_unregistered-signup" id="signup-button">Regístrate Aquí</button>
+      </div>
+
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">¿Ya tienes una cuenta?</h2>
+        <p class="user_registered-text">Inicia sesión para disfrutar de todos nuestros servicios exclusivos.</p>
+        <button class="user_registered-login" id="login-button">Iniciar Sesión</button>
+      </div>
+    </div>
+
+    <div class="user_options-forms" id="user_options-forms">
+      <!-- Formulario de login -->
+      <div class="user_forms-login">
+        <h2 class="forms_title">Iniciar Sesión</h2>
+        <form method="post" class="forms_form-login">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="login">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              {{ login_form.username.errors }}
+              {{ login_form.username }}
+            </div>
+            <div class="forms_field">
+              {{ login_form.password.errors }}
+              {{ login_form.password }}
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <button type="button" class="forms_buttons-forgot">¿Has olvidado la contraseña?</button>
+            <input type="submit" value="Entrar" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+
+      <!-- Formulario de registro -->
+      <div class="user_forms-signup">
+        <h2 class="forms_title">Registro</h2>
+        <form method="post" class="forms_form-register">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="register">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              {{ registro_form.nombre.errors }}
+              {{ registro_form.nombre }}
+            </div>
+            <div class="forms_field">
+              {{ registro_form.email.errors }}
+              {{ registro_form.email }}
+            </div>
+            {% if user.rol == 'administrador' %}
+            <div class="forms_field">
+              {{ registro_form.rol.errors }}
+              {{ registro_form.rol }}
+            </div>
+            {% endif %}
+            <div class="forms_field">
+              {{ registro_form.password.errors }}
+              {{ registro_form.password }}
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="submit" value="Registrarse" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+<script src="{% static 'js/log-in.js' %}"></script>
+</html>

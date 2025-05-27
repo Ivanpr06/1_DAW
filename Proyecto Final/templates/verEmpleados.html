@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load  static %}
+{% block content %}
+    
+    {% include 'navbarAdministrador.html' %}
+    <div class="ver_empleados">
+        <h1>Empleados</h1>
+        
+        <div class="ver_empleados_tabla">
+            <div class="col">
+                <div class="ver_empleados_titulo">
+                    <h3>Nombre</h3>
+                    <h3>Email</h3>
+                    <h3>Teléfono</h3>
+                    <h3>Rol</h3>
+                </div>
+                {% for e in empleados %}
+                <div class="row">
+
+                    <div class="ver_empleados_row">
+                        <div class="custom_row1">
+                            <p class="ver_empleados_nombre">{{e.nombre}}</p>
+                            <p>{{e.email}}</p>
+                            <p>{{e.telefono}}</p>
+                            <p>{{e.rol}}</p>
+                            
+                            <a href="{% url 'edit_empleado' id=e.id %}">
+                                <button class="editar_empleado_btn"><img src="{% static 'images/editar_Admin.png' %}"></button>
+                            </a>
+                            
+                            <a href="{% url 'eliminar_empleado' id=e.id %}">
+                                <button class="eliminar_empleado_btn"><img src="{% static 'images/borrar_Admin.png' %}"></button>
+                            </a>
+                            
+                        </div>
+                    </div>
+                         
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    
+        <a href="{% url 'new_empleado' %}">
+            <button type="submit" class="crear_empleado_btn">Añadir Empleado</button>
+        </a>
+    
+    </div>
+{% endblock %}

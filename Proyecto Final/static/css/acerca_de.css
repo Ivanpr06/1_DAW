@@ -1,0 +1,472 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/acerca_de_fondo.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    font-size: 5rem;
+    color: #e8c07d;
+    animation: fadeInUp 1.5s ease-out both, textGlow 3s ease-in-out infinite 2s;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Italianno', cursive;
+    cursor: pointer;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e8c07d;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+
+.logo:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.slogan {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-weight: 300;
+    font-family: "Instrument Serif", serif;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #D4A373;
+    position: relative;
+    font-family: 'Italianno', cursive;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 2px;
+    background: #e8c07d;
+    margin: 15px auto;
+}
+
+/* Historia */
+.historia-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-family: "Instrument Serif", serif;
+    font-size: 1.15rem;
+    margin-bottom: 5%;
+}
+
+.historia-text {
+    flex: 1;
+}
+
+.historia-img {
+    flex: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.historia-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.historia-img:hover img {
+    transform: scale(1.05);
+}
+
+.filosofia {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding-bottom: 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.filosofia::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.filosofia .section-title {
+    color: #e8c07d;
+    position: relative;
+    z-index: 1;
+    font-size: 3rem;
+    margin-bottom: 70px;
+}
+
+.filosofia .section-title::after {
+    background: #e8c07d;
+    height: 4px;
+    width: 150px;
+}
+
+.pilares-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.pilar {
+    flex: 1;
+    min-width: 300px;
+    perspective: 1000px;
+    height: 200px;
+}
+
+.pilar-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.pilar:hover .pilar-inner {
+    transform: rotateY(180deg);
+}
+
+.pilar-front, .pilar-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.pilar-front {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border: 1px solid #e8c07d33;
+    transform: rotateY(0deg);
+}
+
+.pilar-back {
+    background: linear-gradient(135deg, #e8c07d 0%, #d4a657 100%);
+    color: #1a1a1a;
+    transform: rotateY(180deg);
+}
+
+.pilar-icon {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: #e8c07d;
+}
+
+.pilar-back .pilar-icon {
+    color: #1a1a1a;
+}
+
+.pilar-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Instrument Serif", serif;
+}
+
+.pilar-desc {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Galería */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 100px;
+}
+
+.galeria-item {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1);
+}
+
+.galeria-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.galeria-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    color: #fff;
+    font-size: 1.75rem;
+    font-family: "Instrument Serif", serif;
+}
+
+/* Equipo */
+.equipo{
+    background-color: #1a1a1a;
+    margin-top: 5%;
+    padding-bottom: 5%;
+    padding-top: 2%;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.equipo-card {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.equipo-card:hover {
+    transform: translateY(-10px);
+}
+
+.equipo-img {
+    height: 300px;
+    overflow: hidden;
+}
+
+.equipo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.equipo-card:hover .equipo-img img {
+    transform: scale(1.1);
+}
+
+.equipo-info {
+    padding: 20px;
+}
+
+.equipo-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.equipo-info p {
+    color: #e8c07d;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* Premios */
+.premios-section {
+    padding: 80px 0;
+    background-color: #f0e6d6;
+    position: relative;
+}
+
+.premios-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 100px;
+    z-index: 1;
+}
+
+.premios-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 70px;
+    height: 100%;
+    width: 2px;
+    background: #e8c07d;
+}
+
+.premio-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.premio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.premio-ano {
+    position: absolute;
+    left: -90px;
+    top: 20px;
+    width: 80px;
+    height: 80px;
+    background: #e8c07d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 0 0 5px #f0e6d6;
+}
+
+.premio-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.premio-content p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.premio-icon {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    color: #e8c07d;
+    font-size: 1.5rem;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .historia-content {
+        flex-direction: column;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+    }
+
+    .pilar {
+        min-width: 100%;
+    }
+
+    .premios-timeline {
+        padding-left: 70px;
+    }
+
+    .premio-ano {
+        left: -60px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .premios-timeline {
+        padding-left: 0;
+    }
+
+    .premios-timeline::before {
+        display: none;
+    }
+
+    .premio-ano {
+        position: static;
+        margin-bottom: 15px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .premio-item {
+        text-align: center;
+    }
+
+    .premio-icon {
+        position: static;
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+
+
+@media (max-width: 320px){
+    .pilar-desc{
+        font-size: 1rem;
+    }
+}

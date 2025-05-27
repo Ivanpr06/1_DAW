@@ -1,0 +1,135 @@
+.pedido_content{
+    padding: 5%;
+}
+
+.pedido_content h1{
+    font-family: 'Italianno', cursive;
+    font-size: 60px;
+    color: #D4A373;
+}
+
+.contenido_carrito{
+    margin: auto;
+    width: 50%;
+    padding: 1% 3%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #D4A373;
+    border-radius: 20px;
+    box-shadow: 1px 15px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5%;
+}
+
+.contenido_carrito p {
+    margin: 0;
+    font-size: 20px;
+    font-family: "Instrument Serif", serif;
+}
+
+.cantidad_carrito{
+    display: flex;
+    justify-content: space-between;
+    width: 75px;
+}
+
+.cantidad_carrito_suma{
+    text-align: center;
+    border: 1px solid #D4A373;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 1% 5%;
+    width: 20px;
+    height: 30px;
+}
+
+.contenido_carrito_boton_volver button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #D4A373;
+    border-radius: 20px;
+    background-color: rgba(254, 250, 224, 1);
+    padding: 0.5% 2%;
+    font-family: "Instrument Serif", serif;
+    box-shadow: 1px 5px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5%;
+    margin-left: 5%;
+}
+
+.contenido_carrito_boton_finalizar{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    padding: 0.75% 2%;
+    box-shadow: 1px 5px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+.contenido_carrito_texto_finalizar{
+    display: flex;
+    gap: 20%;
+}
+
+.contenido_carrito_texto_finalizar p{
+    margin: auto;
+}
+
+.contenido_carrito_boton_enviar{
+    background-color: rgba(150, 0, 0, 1);
+    border: none;
+    border-radius: 20px;
+    color: rgba(254, 250, 224, 1);
+    font-family: "Instrument Serif", serif;
+    font-size: 20px;
+}
+
+.carrito_popout {
+    display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.carrito_popout_content {
+  display: flex;
+  flex-direction: column;
+  background-color: #FEFAE0;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+  text-align: center;
+}
+
+.carrito_popout_content img{
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5%;
+}
+
+.pedido_content form {
+    margin-bottom: 0;
+}
+
+@media (max-width: 550px){
+    .contenido_carrito{
+        width: 75%;
+    }
+}
+@media (max-width: 450px){
+    .contenido_carrito p{
+        font-size: 15px;
+    }
+}

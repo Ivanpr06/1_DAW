@@ -1,0 +1,91 @@
+/* Estilos generales del contenedor */
+.anadir_producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 7%;
+    background-color: #FEFAE0;
+}
+
+/* Estilo del título */
+.mod_art p {
+    font-size: 60px;
+    color: #D4A373;
+    padding-bottom: 6%;
+    font-family: 'Italianno', cursive;
+    margin: 0;
+}
+
+/* Contenedor del formulario */
+.formulario_anadir {
+    width: 550px;
+    background-color: white;
+    padding: 2%;
+    border: 2px solid rgb(139, 94, 60);
+    border-radius: 10px;
+    font-family: "Instrument Serif", serif;
+}
+
+/* Estilo de los campos de formulario */
+.form-floating {
+    position: relative;
+    margin-bottom: 5%;
+}
+
+.form-control:focus , .form-select:focus{
+    border-color: rgb(139, 94, 60);
+    box-shadow: 0 0 0 0.25rem rgba(139, 94, 60, 0.25);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+/* Estilo del botón */
+.boton_conf button {
+    background-color: #960000;
+    color: #FEFAE0;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 12px 24px;
+    width: 200px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    font-family: 'Instrument Serif', serif;
+    margin-top: 20px;
+}
+
+.boton_conf button:hover {
+    background-color: rgb(202, 48, 48);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 620px) {
+    .formulario_anadir {
+        width: 375px;
+    }
+}
+
+@media (max-width: 550px) {
+    .mod_art p {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 410px) {
+    .mod_art p {
+        font-size: 30px;
+        margin-top: 5%;
+    }
+
+    .formulario_anadir {
+        width: 250px;
+    }
+
+    .boton_conf button {
+        font-size: 15px;
+        width: 150px;
+    }
+}

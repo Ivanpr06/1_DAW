@@ -1,0 +1,72 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/factura.css' %}">
+
+{% block content %}
+
+    <div class="encabezado" >
+        <div class="titulo">
+            <img src="../static/images/logo.png">
+            <h1>Ristorante Ramos</h1>
+        </div>
+
+        <div class="info">
+            <p>Calle Esperanza de Triana, 36</p>
+            <p>41010, Sevilla</p>
+            <p>(+34) 954 16 32 48</p>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="numFactura my-5">
+        <h1 class="mb-3">FACTURA Nº 0010</h1>
+        <p>FECHA DE EXPEDICIÓN: 10 DE SEPTIEMBRE DE 2025</p>
+    </div>
+
+    <br>
+
+    <div class="descripcion mt-5">
+        <div class="conceptos">
+            <h3 class="text_start">DESCRIPCIÓN</h3>
+            <h3>CANTIDAD</h3>
+            <h3>PRECIO</h3>
+            <h3>TOTAL</h3>
+        </div>
+        <div class="conceptos_factura">
+            <p class="text_start">PIZZA 4 FORMAGGI</p>
+            <p>2</p>
+            <p>14.00 €</p>
+            <p>28.00 €</p>
+        </div>
+        <div class="conceptos_factura">
+            <p class="text_start">INSALATA CAPRESSE</p>
+            <p>1</p>
+            <p>11.00 €</p>
+            <p>22.00 €</p>
+        </div>
+        <div class="conceptos_factura">
+            <p class="text_start">TIRAMISÚ</p>
+            <p>1</p>
+            <p>09.00 €</p>
+            <p>18.00 €</p>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end mt-5">
+        <p>IMPORTE A PAGAR:</p>
+        <p style="width: 5%"><b>68.00 €</b></p>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="num_cuenta fs-4 text">
+        <p>CAIXA BANK</p>
+        <p>CENTRAL DE ESPAÑA</p>
+        <p>NUM. CUENTA: 0000 1234 5678 0000 9999</p>
+    </div>
+
+    <br><br>
+
+    <h1 class="text-end"><b>¡MUCHAS GRACIAS!</b></h1>
+
+{% endblock %}

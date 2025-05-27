@@ -1,0 +1,45 @@
+.ver_pedidos_titulo, .custom_row1.cocinero {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    padding: 1rem;
+    gap: 0 !important;
+}
+
+.ver_pedidos_titulo h3 {
+    font-size: 40px;
+    color: #D4A373;
+    font-family: 'Italianno', cursive;
+}
+
+.row.cocinero>* {
+    padding-right: 1% !important;
+    padding-left: 1% !important;
+}
+
+section.pedido {
+    margin-bottom: 5%;
+}
+
+a.cocinero {
+    text-decoration: underline;
+    cursor: pointer;
+    color: gray;
+}
+
+h3.receta {
+    font-size: 40px;
+    color: #D4A373;
+    font-family: 'Italianno', cursive;
+}
+
+.modal.fade.receta.show {
+    overflow-y: hidden;
+}
+
+a.btn {
+    font-size: 20px;
+    width: 250px;
+    border-radius: 50px;
+    justify-content: center;
+    padding: 5px;
+}

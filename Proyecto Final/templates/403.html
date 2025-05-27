@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="error_404_content">
+        <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" style="width: 100px;padding-bottom: 2%; cursor: pointer;"></a>
+
+        <img src="{% static 'images/detective.png' %}" style="width: 200px">
+        <h1>¡Intruso!</h1>
+        <h3>La página que estabas buscando <br>no esta disponible para tu acceso</h3>
+         <a href="{% url 'home' %}"><button style="padding: 20% 40% !important;" class="contenido_carrito_boton_enviar">Volver</button></a>
+    </div>
+{% endblock %}

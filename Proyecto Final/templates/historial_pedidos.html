@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'navbarAdministrador.html' %}
+    
+    <h1 style="padding: 5%; padding-bottom:1%;font-family: 'Italianno', cursive; color: #D4A373">Historial de Pedidos</h1>
+    <div class="historial_pedidos">
+        {% for p in pedidos %}
+            <div class="historial_pedidos_content">
+                <h4>{{ p.cliente.nombre }}</h4>
+                <h6>{{ p.cliente.email }}</h6>
+            
+                <h6>{{ p.fecha_hora }}</h6>
+            
+
+                {% if p.mesa.id %}
+                <h6>Mesa {{ p.mesa.id }}</h6>
+                <h6 style="display: flex">Estado:&nbsp;<p style="text-transform: capitalize; color: gold"> {{ p.estado }}</p></h6>
+                {% else %}
+                    <h6 style="display: flex">Estado:&nbsp;<p style="text-transform: capitalize; color: green"> {{ p.estado }}</p></h6>
+                {% endif %}
+
+                <h6>Mesa {{ p.mesa.id }}</h6>
+                <h6>Articulos :</h6>
+                {% for l in p.lineas.all %}
+                        <div class="linea_pedido">
+                            <p>{{ l.articulo.nombre }} x {{ l.cantidad }}</p>
+                        </div>
+                {% endfor %}
+                <p><b>Total: {{ p.total }}€</b></p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

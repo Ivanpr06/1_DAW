@@ -1,0 +1,49 @@
+{% load static %}
+
+{% block content %}
+    <!--Clase para el div entero-->
+    <div class="footer">
+        <!--Parte del texto-->
+        <div class="parte-izq">
+            <h1 class="titulo_footer">Ristorante Ramos</h1>
+            <div class="texto">
+                <!--Contenedores con Texto-->
+                <div class="cajas">
+                    <p class="encabezado">Contacto</p>
+                    <div class="informacion">
+                        <p>C.Esperanza de Triana, 36</p>
+                        <p>41010,Sevilla</p>
+                        <p>(+34)954 16 32 48</p>
+                        <p>info@restauranteramos.es</p>
+                    </div>
+                </div>
+                <!--Contenedores con Texto-->
+                <div class="cajas">
+                    <p class="encabezado">Horario</p>
+                    <div class="informacion">
+                        <p>TODOS LOS DÍAS</p>
+                        <p>13:00h - 16:00h</p>
+                        <p>20:00h - 23:30h</p>
+                    </div>
+                </div>
+                
+            </div>
+            <!--Redes Sociales-->
+            <div class="imagenes_footer">
+                <img src="{% static 'images/insta_logo.png' %}">
+                <img src="{% static 'images/facebook_logo.png' %}">
+                <img src="{% static 'images/tik-tok_logo.png' %}">
+            </div>
+            <!--Avisos Legales-->
+            <div class="encabezado_footer">
+                <p>Aviso Legal</p>
+                <p>Política de Privacidad</p>
+                <p>Política de Cookies</p>
+            </div>
+        </div>
+        <!--Mapa-->
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.4486258441216!2d-6.006322025016863!3d37.379221434848304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c3ff0273ca1%3A0xb89871641fa1f441!2sC.%20Esperanza%20de%20Triana%2C%2036%2C%2041010%20Sevilla!5e0!3m2!1ses!2ses!4v1744384895061!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+{% endblock %}

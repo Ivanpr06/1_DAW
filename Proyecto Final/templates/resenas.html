@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load  static %}
+{% block content %}
+    
+    {% include 'navbarAdministrador.html' %}
+    <div class="ver_empleados">
+        <h1>Reseñas</h1>
+        
+        <div class="ver_empleados_tabla">
+            <div class="col">
+                <div class="ver_empleados_titulo">
+                    <h3>Nombre</h3>
+                    <h3>Puntuación</h3>
+                    <h3>Comentario</h3>
+                    <h3>Fecha</h3>
+                </div>
+            
+                {% for r in resenas %}
+                {% if user.id == r.usuario_id %}
+                <div class="row">
+                    <div class="ver_empleados_row">
+                        <div class="custom_row1">
+                            <p>{{r.usuario}}</p>
+                            <p>{{r.puntuacion}}</p>
+                            <p>{{r.comentario}}</p>
+                            <p>{{ r.fecha }}</p>
+                    
+                                <a href="{% url 'edit_resena' id=r.id %}">
+                                    <button class="editar_empleado_btn"><img src="{% static 'images/editar_Admin.png' %}"></button>
+                                </a>
+                    
+                            <a href="{% url 'eliminar_resena' id=r.id %}">
+                                <button class="eliminar_empleado_btn"><img src="{% static 'images/borrar_Admin.png' %}"></button>
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+                 {% endif %}   
+                {% endfor %}
+            </div>
+        </div>
+    
+        <a href="{% url 'new_resena'%}">
+            <button type="submit" class="crear_empleado_btn">Añadir Reseña</button>
+        </a>
+    
+    </div>
+{% endblock %}

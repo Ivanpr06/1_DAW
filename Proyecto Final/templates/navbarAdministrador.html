@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load  static %}
+{% block content %}
+<form id="form-foto" method="POST" enctype="multipart/form-data" action="{% url 'actualizar_foto' %}" style="display: none;">
+  {% csrf_token %}
+  <input type="file" id="input-foto" name="foto" accept="image/*" onchange="document.getElementById('form-foto').submit();">
+</form>
+    
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark py-3 nav_mod" style="background-image: url('{% static 'images/fondoAdmin.png' %}'); background-size: cover;">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="150" height="150" style="border-radius: 20px">
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú colapsable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'empleados' %}">EMPLEADOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'articulos' %}">CARTA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'reporte' %}">REPORTES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'historial' %}">HISTORIAL</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--Botones-->
+            <div class="d-flex">
+                {% if user.is_authenticated %}
+                    <a href="#" class="btn d-flex align-items-center text-light p-0 border-0 bg-transparent"
+                       data-bs-toggle="modal" data-bs-target="#perfilModal">
+                      {% if user.foto %}
+                        <img src="{{ user.foto.url }}" alt="Foto de perfil" class="rounded-circle me-2" style="width: 35px; height: 35px; object-fit: cover;">
+                      {% else %}
+                        <i class="bi bi-person-circle fs-4 me-2"></i>
+                      {% endif %}
+                      <span>{{ user.nombre }}</span>
+                    </a>
+                {% else %}
+                  <a href="{% url 'log_in_page' %}" class="btn btn-outline-light me-2 d-flex align-items-center administrador">
+                    <i class="bi bi-person-fill me-1"></i> ADMINISTRADOR
+                  </a>
+                {% endif %}
+                <!-- Botón Top 5 artículos más vendidos -->
+                <form method="post" action="{% url 'procedure' %}" class="m-0">
+                    {% csrf_token %}
+                        <button type="submit" class="btn btn-danger administrador">ARTICULO ESTRELLA</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Título administrador -->
+        <div class="presentacion_mod">
+          <h1>ADMINISTRADOR</h1>
+        </div>
+        
+         <!-- Modal Bootstrap -->
+        <div class="modal fade" id="topArticulosModal" tabindex="-1" aria-labelledby="topArticulosLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="topArticulosLabel">Top 5 artículos más vendidos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        {% if resultados %}
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Artículo</th>
+                                        <th>Cantidad vendida</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for articulo in resultados %}
+                                        <tr>
+                                            <td>{{ articulo.0 }}</td>
+                                            <td>{{ articulo.1 }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                        <p>No hay datos disponibles.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Modal para mostrar y editar el perfil -->
+    <div class="modal fade" id="editarPerfilModal" tabindex="-1" aria-labelledby="editarPerfilModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editarPerfilModalLabel">Editar Perfil</h5>
+              <button type="button" class="btn-close" id="cerrarEditarPerfilBtn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="{% url 'editar_perfil' %}">
+              {% csrf_token %}
+              
+              <!-- Campos del formulario -->
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ user.nombre }}">
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" value="{{ user.telefono }}">
+              </div>
+              <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccion" name="direccion" value="{{ user.direccion }}">
+              </div>
+              
+              <!-- Botón para guardar cambios -->
+              <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="cerrarFooterEditarPerfilBtn" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal para mostrar el perfil del usuario -->
+    <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark">
+          <div class="modal-header">
+            <h5 class="modal-title" id="perfilModalLabel">Perfil del Usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <!-- BOTÓN FOTO PERFIL -->
+            <button class="btn p-0 border-0 bg-transparent" onclick="document.getElementById('input-foto').click();">
+              {% if user.foto %}
+                <img src="{{ user.foto.url }}" alt="Foto de perfil" id="preview-foto"
+                     class="rounded-circle me-2" style="width: 250px; height: 250px; object-fit: cover;">
+              {% else %}
+                <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                     style="width: 250px; height: 250px;">
+                  <i class="bi bi-camera text-white"></i>
+                </div>
+              {% endif %}
+            </button>
+            <p><strong>Nombre:</strong> {{ user.nombre }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Teléfono:</strong> {{ user.telefono }}</p>
+            <p><strong>Dirección:</strong> {{ user.direccion }}</p>
+          
+            {% if user.rol == 'administrador' %}
+            <a href="{% url 'empleados' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Administrador</a>
+            {% endif %}
+            
+            {% if user.rol == 'cocinero' or user.rol == 'administrador' %}
+            <a href="{% url 'cocinero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Cocinero</a>
+            {% endif %}
+            
+            {% if user.rol == 'camarero' or user.rol == 'administrador' %}
+            <a href="{% url 'camarero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Camarero</a>
+            {% endif %}
+    
+            <a href="{% url 'logout' %}" class="btn btn-danger logout">Cerrar sesión</a>
+          </div>
+          <div class="modal-footer">
+            <!-- Botón para abrir el modal de editar y cerrar el modal actual -->
+            <button href="#" data-bs-toggle="modal" data-bs-target="#editarPerfilModal" data-bs-dismiss="modal" class="btn btn-warning logout">Editar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const editarPerfilModal = document.getElementById('editarPerfilModal');
+        const cerrarHeaderBtn = document.getElementById('cerrarEditarPerfilBtn'); // Botón de la cabecera
+        const cerrarFooterBtn = document.getElementById('cerrarFooterEditarPerfilBtn'); // Botón del footer
+    
+        function reabrirPerfilModal() {
+          // Elimina backdrop manualmente si existe
+          document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+    
+          const perfilModal = new bootstrap.Modal(document.getElementById('perfilModal'));
+          perfilModal.show();
+        }
+    
+        function manejarCierreYReapertura(btn) {
+          if (btn && editarPerfilModal) {
+            btn.addEventListener('click', function () {
+              editarPerfilModal.addEventListener('hidden.bs.modal', function handler() {
+                editarPerfilModal.removeEventListener('hidden.bs.modal', handler);
+                reabrirPerfilModal();
+              });
+            });
+          }
+        }
+    
+        // Aplica el manejo a ambos botones de cierre
+        manejarCierreYReapertura(cerrarHeaderBtn);
+        manejarCierreYReapertura(cerrarFooterBtn);
+      });
+    </script>
+
+    
+    {% if mostrar_modal %}
+    <script>
+        var modal = new bootstrap.Modal(document.getElementById('topArticulosModal'));
+        modal.show();
+    </script>
+    {% endif %}
+    
+{% endblock %}

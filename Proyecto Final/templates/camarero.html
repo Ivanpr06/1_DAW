@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form id="form-foto" method="POST" enctype="multipart/form-data" action="{% url 'actualizar_foto' %}" style="display: none;">
+  {% csrf_token %}
+  <input type="file" id="input-foto" name="foto" accept="image/*" onchange="document.getElementById('form-foto').submit();">
+</form>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark py-3 nav_mod" style="background-image: url('{% static 'images/fondo_camarero.jpg' %}'); background-size: 100%">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="150" height="150" style="border-radius: 20px">
+            </a>
+            <div></div>
+            <div class="d-flex">
+                {% if user.is_authenticated %}
+                    <a href="#" class="btn d-flex align-items-center text-light p-0 border-0 bg-transparent"
+                       data-bs-toggle="modal" data-bs-target="#perfilModal">
+                      {% if user.foto %}
+                        <img src="{{ user.foto.url }}" alt="Foto de perfil" class="rounded-circle me-2" style="width: 35px; height: 35px; object-fit: cover;">
+                      {% else %}
+                        <i class="bi bi-person-circle fs-4 me-2"></i>
+                      {% endif %}
+                      <span>{{ user.nombre }}</span>
+                    </a>
+                {% else %}
+                  <a href="{% url 'log_in_page' %}" class="btn btn-outline-light me-2 d-flex align-items-center administrador">
+                    <i class="bi bi-person-fill me-1"></i> CAMARERO
+                  </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="presentacion_mod">
+            <h1>CAMARERO</h1>
+        </div>
+    </nav>
+
+
+    <div class="ver_empleados">
+        <h1>Gestión de pedidos:</h1>
+
+        <div class="ver_empleados_tabla">
+            <div class="col">
+                <div class="ver_pedidos_titulo_camarero">
+                <h3>Nº Mesa</h3>
+                <h3>Nº Pedido</h3>
+                <h3>Estado Mesa</h3>
+                <h3>Estado Pedido</h3>
+                <h3>Cobro</h3>
+            </div>
+
+            {% for item in mesas_y_pedidos %}
+            <div class="row cocinero">
+                <div class="ver_empleados_row">
+                    <div class="custom_row1 camarero">
+                        <!-- Número de mesa -->
+                        <p>{{ item.mesa.id }}</p>
+
+                        <!-- Número de pedido asociado -->
+                        <p>
+                            {% if item.mesa.estado == 'LIBRE' %}
+                                -
+                            {% elif item.pedido %}
+                                {{ item.pedido.id }}
+                            {% else %}
+                                -
+                            {% endif %}
+                        </p>
+
+                        <!-- Select para cambiar estado mesa -->
+                        <form method="post" action="{% url 'actualizar_estado_mesa' item.mesa.id %}" class="d-inline">
+                            {% csrf_token %}
+                            <select name="estado" class="form-select form-select-sm d-inline-block w-auto align-items-center">
+                                <option value="LIBRE" {% if item.mesa.estado == 'LIBRE' %}selected{% endif %}>Libre</option>
+                                <option value="OCUPADA" {% if item.mesa.estado == 'OCUPADA' %}selected{% endif %}>Ocupada</option>
+                            </select>
+                            <button type="submit" class="btn btn-sm btn-primary">OK</button>
+                        </form>
+
+                        <!-- Select para cambiar estado pedido -->
+                        {% if item.pedido %}
+                            <form method="post" action="{% url 'actualizar_estado_pedido' id=item.pedido.id %}" class="d-inline">
+                                {% csrf_token %}
+                                <select name="estado" class="form-select form-select-sm d-inline-block w-auto align-items-center">
+                                    <option value="pendiente" {% if item.pedido.estado == 'pendiente' %}selected{% endif %}>Pendiente</option>
+                                    <option value="preparado" {% if item.pedido.estado == 'preparado' %}selected{% endif %}>Preparado</option>
+                                    <option value="servido" {% if item.pedido.estado == 'servido' %}selected{% endif %}>Servido</option>
+                                    <option value="pagado" {% if item.pedido.estado == 'pagado' %}selected{% endif %}>Pagado</option>
+                                </select>
+                                <button type="submit" class="btn btn-sm btn-primary">OK</button>
+                            </form>
+                        {% else %}
+                            <p>-</p>
+                        {% endif %}
+
+                        <!-- Botón generar cobro -->
+                        <div>
+                            {% if item.pedido and item.pedido.estado == 'servido' %}
+                                <form method="post" action="{% url 'pagar_pedido' item.pedido.id %}">
+                                    {% csrf_token %}
+                                    <button class="contenido_carrito_boton_enviar" onclick="document.getElementById('popout-{{ item.pedido.id }}').style.display='flex'">PAGAR</button>
+                                </form>
+                            {% else %}
+                                -
+                            {% endif %}
+                        </div>
+
+                        <!-- Popout individual por pedido -->
+                        <div id="popout-{{ item.pedido.id }}" class="carrito_popout" style="display: none;">
+                            <div class="carrito_popout_content">
+                                <h1>¡Pago Realizado <br> con Éxito!</h1>
+                                <img src="{% static 'images/tick_carrito.png' %}">
+                                <a href="{% url 'camarero' %}"><button class="contenido_carrito_boton_enviar">Volver</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <p>No hay líneas para este pedido.</p>
+            {% endfor %}
+        </div></div>
+    </div>
+    
+<!-- Modal para mostrar y editar el perfil -->
+<div class="modal fade" id="editarPerfilModal" tabindex="-1" aria-labelledby="editarPerfilModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarPerfilModalLabel">Editar Perfil</h5>
+          <button type="button" class="btn-close" id="cerrarEditarPerfilBtn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{% url 'editar_perfil' %}">
+          {% csrf_token %}
+          
+          <!-- Campos del formulario -->
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ user.nombre }}">
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ user.telefono }}">
+          </div>
+          <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" value="{{ user.direccion }}">
+          </div>
+          
+          <!-- Botón para guardar cambios -->
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="cerrarFooterEditarPerfilBtn" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para mostrar el perfil del usuario -->
+<div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="perfilModalLabel">Perfil del Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <!-- BOTÓN FOTO PERFIL -->
+        <button class="btn p-0 border-0 bg-transparent" onclick="document.getElementById('input-foto').click();">
+          {% if user.foto %}
+            <img src="{{ user.foto.url }}" alt="Foto de perfil" id="preview-foto"
+                 class="rounded-circle me-2" style="width: 250px; height: 250px; object-fit: cover;">
+          {% else %}
+            <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                 style="width: 250px; height: 250px;">
+              <i class="bi bi-camera text-white"></i>
+            </div>
+          {% endif %}
+        </button>
+        <p><strong>Nombre:</strong> {{ user.nombre }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Teléfono:</strong> {{ user.telefono }}</p>
+        <p><strong>Dirección:</strong> {{ user.direccion }}</p>
+      
+        {% if user.rol == 'administrador' %}
+        <a href="{% url 'empleados' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Administrador</a>
+        {% endif %}
+        
+        {% if user.rol == 'cocinero' or user.rol == 'administrador' %}
+        <a href="{% url 'cocinero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Cocinero</a>
+        {% endif %}
+        
+        {% if user.rol == 'camarero' or user.rol == 'administrador' %}
+        <a href="{% url 'camarero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Camarero</a>
+        {% endif %}
+
+        <a href="{% url 'logout' %}" class="btn btn-danger logout">Cerrar sesión</a>
+      </div>
+      <div class="modal-footer">
+        <!-- Botón para abrir el modal de editar y cerrar el modal actual -->
+        <button href="#" data-bs-toggle="modal" data-bs-target="#editarPerfilModal" data-bs-dismiss="modal" class="btn btn-warning logout">Editar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const editarPerfilModal = document.getElementById('editarPerfilModal');
+    const cerrarHeaderBtn = document.getElementById('cerrarEditarPerfilBtn'); // Botón de la cabecera
+    const cerrarFooterBtn = document.getElementById('cerrarFooterEditarPerfilBtn'); // Botón del footer
+
+    function reabrirPerfilModal() {
+      // Elimina backdrop manualmente si existe
+      document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+
+      const perfilModal = new bootstrap.Modal(document.getElementById('perfilModal'));
+      perfilModal.show();
+    }
+
+    function manejarCierreYReapertura(btn) {
+      if (btn && editarPerfilModal) {
+        btn.addEventListener('click', function () {
+          editarPerfilModal.addEventListener('hidden.bs.modal', function handler() {
+            editarPerfilModal.removeEventListener('hidden.bs.modal', handler);
+            reabrirPerfilModal();
+          });
+        });
+      }
+    }
+
+    // Aplica el manejo a ambos botones de cierre
+    manejarCierreYReapertura(cerrarHeaderBtn);
+    manejarCierreYReapertura(cerrarFooterBtn);
+  });
+</script>
+{% endblock %}

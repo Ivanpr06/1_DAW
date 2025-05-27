@@ -1,0 +1,12 @@
+.ver_pedidos_titulo_camarero, .custom_row1.camarero {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    display: grid;
+    padding: 1rem;
+    gap: 0 !important;
+}
+
+.ver_pedidos_titulo_camarero h3 {
+    font-size: 40px;
+    color: #D4A373;
+    font-family: 'Italianno', cursive;
+}

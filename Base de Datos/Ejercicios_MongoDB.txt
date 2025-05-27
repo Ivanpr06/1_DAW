@@ -1,0 +1,80 @@
+Ejercicio 1
+use tienda;
+
+db.productos.insertOne({
+  nombre: "Camiseta Básica",
+  precio: 25.99,
+  categoria: "Ropa",
+  descripcion: "Camiseta de algodón básica",
+  disponibilidad: true
+});
+
+Ejercicio 2
+db.productos.insertMany([
+  {
+    nombre: "Smartphone",
+    precio: 299.99,
+    categoria: "Electrónica",
+    descripcion: "Smartphone de última generación",
+    disponibilidad: true
+  },
+  {
+    nombre: "Auriculares Bluetooth",
+    precio: 59.99,
+    categoria: "Accesorios",
+    descripcion: "Auriculares inalámbricos con micrófono",
+    disponibilidad: true
+  },
+  {
+    nombre: "Camiseta Deportiva",
+    precio: 19.99,
+    categoria: "Ropa",
+    descripcion: "Camiseta transpirable para deporte",
+    disponibilidad: false
+  }
+]);
+
+Ejercicio 3
+db.productos.find({ precio: { $gt: 50 } });
+
+Ejercicio 4
+db.productos.find({
+  categoria: "Electrónica",
+  precio: { $lte: 100 }
+});
+
+Ejercicio 5
+db.productos.updateOne(
+  { precio: 99.99 },
+  { $set: { precio: 89.99 } }
+);
+
+Ejercicio 6
+db.productos.deleteOne({ nombre: "Smartphone" });
+
+Ejercicio 7
+db.productos.find({
+  nombre: { $regex: "camiseta", $options: "i" }
+});
+
+Ejercicio 8
+db.productos.find({
+  $or: [
+    { categoria: "Ropa" },
+    { categoria: "Accesorios" }
+  ]
+});
+
+Ejercicio 9
+db.productos.find({
+  categoria: { $in: ["Ropa", "Accesorios"] }
+});
+
+Ejercicio 10
+db.productos.countDocuments({ categoria: "Electrónica" });
+
+Ejercicio 11
+db.productos.deleteMany({
+  categoria: "Accesorios",
+  precio: { $gt: 50 }
+});

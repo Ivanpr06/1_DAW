@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="CENTER" prefHeight="434.0" prefWidth="447.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.tienda_de_pesca.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <Pane prefHeight="470.0" prefWidth="453.0">
+         <children>
+            <ImageView fitHeight="56.0" fitWidth="250.0" layoutX="79.0" layoutY="14.0">
+               <image>
+                  <Image url="@../../../../../../../../../../../../Users/damda/Downloads/examenenp" />
+               </image>
+            </ImageView>
+            <Line endX="100.0" layoutX="200.0" layoutY="220.0" rotate="90.0" startX="-100.0" />
+            <Label fx:id="labelmodelo" layoutX="25.0" layoutY="87.0" text="Modelo" />
+            <Label fx:id="labelojos" layoutX="25.0" layoutY="212.0" text="Ojos" />
+            <Label fx:id="labelreferencia" layoutX="17.0" layoutY="271.0" prefHeight="17.0" prefWidth="64.0" text="Referencia" />
+            <Label fx:id="labelcolor" layoutX="20.0" layoutY="150.0" prefHeight="17.0" prefWidth="35.0" text="Color" />
+            <TextField fx:id="textmodelo" layoutX="20.0" layoutY="107.0" />
+            <TextField fx:id="textcolor" layoutX="20.0" layoutY="172.0" />
+            <TextField fx:id="textojos" layoutX="20.0" layoutY="237.0" />
+            <TextField fx:id="textreferencia" layoutX="20.0" layoutY="296.0" />
+            <Button fx:id="botonguardar" layoutX="110.0" layoutY="340.0" mnemonicParsing="false" text="Guardar" />
+            <ComboBox fx:id="combotamano" layoutX="218.0" layoutY="107.0" prefWidth="150.0" />
+            <Label fx:id="labeltamano" layoutX="219.0" layoutY="87.0" text="Tamaño" />
+            <DatePicker fx:id="datefecha" layoutX="219.0" layoutY="296.0" prefHeight="25.0" prefWidth="150.0" />
+            <Label fx:id="labelfecha" layoutX="219.0" layoutY="271.0" prefHeight="17.0" prefWidth="110.0" text="Fecha de Recepcion" />
+            <TextField fx:id="textnavegavilidad" layoutX="219.0" layoutY="172.0" />
+            <Label fx:id="labelnavegavilidad" layoutX="219.0" layoutY="150.0" prefHeight="17.0" prefWidth="79.0" text="Navegavilidad" />
+            <TextField fx:id="textpeso" layoutX="219.0" layoutY="237.0" prefHeight="25.0" prefWidth="35.0" />
+            <TextField fx:id="textdisponibilidad" layoutX="262.0" layoutY="237.0" prefHeight="25.0" prefWidth="59.0" />
+            <TextField fx:id="textpvp" layoutX="329.0" layoutY="237.0" prefHeight="25.0" prefWidth="35.0" />
+            <Label fx:id="labelpeso" layoutX="220.0" layoutY="212.0" text="Peso" />
+            <Label fx:id="labeldisponibilidad" layoutX="253.0" layoutY="212.0" text="Disponibilidad" />
+            <Label fx:id="labelpvp" layoutX="334.0" layoutY="212.0" text="P.V.P" />
+            <Button fx:id="botonmodificar" layoutX="211.0" layoutY="340.0" mnemonicParsing="false" text="Modificar" />
+         </children>
+      </Pane>
+   </children>
+</VBox>

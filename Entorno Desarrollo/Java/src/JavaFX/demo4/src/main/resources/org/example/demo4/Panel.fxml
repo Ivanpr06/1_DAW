@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="648.0" prefWidth="646.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo4.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <AnchorPane prefHeight="470.0" prefWidth="606.0">
+         <children>
+            <Label layoutX="59.0" layoutY="53.0" text="Fecha Alquiler" />
+            <DatePicker fx:id="DataFechalq" layoutX="45.0" layoutY="78.0" prefHeight="25.0" prefWidth="104.0" />
+            <Label layoutX="214.0" layoutY="53.0" text="Fecha Entrega" />
+            <DatePicker fx:id="DataFechaent" layoutX="199.0" layoutY="78.0" prefHeight="25.0" prefWidth="104.0" />
+            <Label layoutX="367.0" layoutY="53.0" text="Vehículo" />
+            <ComboBox fx:id="ComboVeh" layoutX="338.0" layoutY="78.0" prefHeight="25.0" prefWidth="104.0" />
+            <Label layoutX="509.0" layoutY="53.0" text="Clientes" />
+            <ComboBox fx:id="ComboClient" layoutX="478.0" layoutY="78.0" prefHeight="25.0" prefWidth="104.0" />
+            <Label layoutX="45.0" layoutY="158.0" text="DESCRIPCIÓN" />
+            <Label layoutX="45.0" layoutY="190.0" text="MARCA" />
+            <Label layoutX="45.0" layoutY="226.0" text="KILÓMETROS" />
+            <Label layoutX="45.0" layoutY="264.0" text="PRECIO" />
+            <TextField fx:id="TextDes" layoutX="149.0" layoutY="154.0" />
+            <TextField fx:id="TextMarca" layoutX="149.0" layoutY="186.0" />
+            <TextField fx:id="TextKm" layoutX="149.0" layoutY="222.0" />
+            <TextField fx:id="TextPrecio" layoutX="149.0" layoutY="260.0" />
+            <Label layoutX="338.0" layoutY="158.0" text="NIF" />
+            <Label layoutX="338.0" layoutY="190.0" text="DIRECCIÓN" />
+            <Label layoutX="338.0" layoutY="226.0" text="POBLACIÓN" />
+            <TextField fx:id="TextPobl" layoutX="442.0" layoutY="222.0" />
+            <TextField fx:id="TextDirc" layoutX="442.0" layoutY="186.0" />
+            <TextField fx:id="TextNIF" layoutX="442.0" layoutY="154.0" />
+            <Label layoutX="216.0" layoutY="325.0" text="TOTAL SERVICIO" />
+            <TextField fx:id="TextTotalServ" layoutX="325.0" layoutY="321.0" />
+            <Button layoutX="299.0" layoutY="376.0" mnemonicParsing="false" onAction="#ButtonGrabar" text="Grabar" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableGrabar" prefHeight="159.0" prefWidth="623.0">
+        <columns>
+          <TableColumn fx:id="columnMatricula" prefWidth="92.0" text="MATRICULA" />
+          <TableColumn fx:id="columnMarca" prefWidth="92.0" text="MARCA" />
+            <TableColumn fx:id="columnPrecio" prefWidth="85.0" text="PRECIO" />
+            <TableColumn fx:id="columnFechaAlquiler" prefWidth="132.0" text="FECHA ALQUILER" />
+            <TableColumn fx:id="columnFechaEntrega" prefWidth="125.0" text="FECHA ENTREGA" />
+            <TableColumn fx:id="columnTotal" prefWidth="79.0" text="TOTAL" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

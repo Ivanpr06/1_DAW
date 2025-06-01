@@ -86,33 +86,39 @@
     
         <!--Formulario-->
         <section class="formulario">
-            <h2 class="titulo">Contacta con Nosotros</h2>
-            <p>En nombre de nuestro restaurante, queremos agradecerte por tu interés en contactarnos. Estamos encantados de responder a tus preguntas y recibir tus comentarios.</p>
-            <form action="" method="post">
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="floatingNombre" type="text" name="nombre" placeholder="Introduce tu nombre" required>
-                    <label for="floating">Nombre</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="floatingEmail" type="email" name="correo" placeholder="Introduce tu correo" required>
-                    <label for="floating">Email</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="floatingTelefono" type="text" name="teléfono" placeholder="Introduce tu teléfono" required>
-                    <label for="floating">Teléfono</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <textarea class="form-control" id="floatingAsunto" name="asunto" placeholder="Añade la información que consideres" required style="height: 150px;"></textarea>
-                    <label for="floating">Asunto</label>
-                </div>
-            </form>
-
-            
+            <h2 class="titulo">Comparte tu Opinión</h2>
+            <p>En nombre de nuestro restaurante, queremos agradecerte por tu interés por compartir tu opinión. Estamos encantados de responder a tus recomendaciones y recibir tus comentarios.</p>             
+            <h6>Tus reseñas</h6>
+            <div class="formulario_resena">
+                {% if resenas %}
+                    {% for r in resenas %}
+                        <div class="ver_resena">
+                            <p>{{ r.comentario }}</p>
+                            <p>{{ r.usuario.nombre }}</p>
+                            <p>{{ r.puntuacion }}</p>
+                            <p> {{ r.fecha_modificacion }}</p>
+                            <a href="{% url 'edit_resena' id=r.id %}">
+                                <button class="editar_empleado_btn"><img src="{% static 'images/editar_Admin.png' %}"></button>
+                            </a>
+                                    
+                            <a href="{% url 'eliminar_resena' id=r.id %}">
+                                <button class="eliminar_empleado_btn"><img src="{% static 'images/borrar_Admin.png' %}"></button>
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No tienes ninguna reseña</p>
+                {% endif %}
+            </div>
+        
             <!--Botón enviar-->
             <div class="boton_enviar">
-                <button>Enviar</button>
+                 <a href="{% url 'new_resena' %}">
+                    <button>ESCRIBE TU RESEÑA</button>
+                 </a>
             </div>
             
+        
             <div class="theme-toggle" id="toggle-theme">
                 <div class="slider">
                     <img id="theme-icon" src="{% static 'images/sun.png' %}" alt="Ícono tema">

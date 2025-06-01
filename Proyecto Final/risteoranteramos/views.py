@@ -49,7 +49,97 @@ def go_home(request):
     return render(request, 'home.html', {'articulos': articulos_destacados})
 
 def go_contacto(request):
-    return render(request, 'contacto.html')
+    resenas = Resena.objects.filter(usuario=request.user) if request.user.is_authenticated else []
+    return render(request, 'contacto.html', {'resenas': resenas})
+
+def new_resena(request):
+    if not request.user.is_authenticated:
+        return redirect('log_in_page')
+
+    if request.method == 'POST':
+        form = FormularioResena(request.POST)
+        if form.is_valid():
+            nueva_resena = form.save(commit=False)
+            nueva_resena.usuario = request.user
+            nueva_resena.save()
+            return redirect('contacto')
+    else:
+        form = FormularioResena()
+
+    return render(request, 'anadirResenas.html', {'form': form})
+
+def edit_resena(request, id):
+    if not request.user.is_authenticated:
+        return redirect('log_in_page')
+
+    resena = get_object_or_404(Resena, id=id)
+
+    if request.method == 'POST':
+        form = FormularioResena(request.POST, instance=resena)
+        if form.is_valid():
+            form.save()
+            return redirect('contacto')
+    else:
+        form = FormularioResena(instance=resena)
+
+    return render(request, 'anadirResenas.html', {'form': form})
+
+def eliminar_resena(request, id):
+    if not request.user.is_authenticated:
+        return redirect('log_in_page')
+
+    empleado_resena = Resena.objects.filter(id=id)
+
+    if len(empleado_resena) != 0:
+        empleado_resena[0].delete()
+        return redirect('contacto')
+
+def new_reserva(request):
+    if not request.user.is_authenticated:
+        return redirect('log_in_page')
+
+    reservas = Reserva.objects.filter(usuario=request.user) if request.user.is_authenticated else []
+
+    if request.method == 'POST':
+        form = FormularioReserva(request.POST)
+        if form.is_valid():
+            nueva_reserva = form.save(commit=False)
+            nueva_reserva.usuario = request.user
+            nueva_reserva.save()
+            return redirect('new_reserva')
+    else:
+        form = FormularioReserva()
+
+    return render(request, 'reservar.html', {'form': form, 'reservas': reservas})
+
+def edit_reserva(request, id):
+    if not request.user.is_authenticated:
+        return redirect('log_in_page')
+
+    reserva = get_object_or_404(Reserva, id=id, usuario=request.user)
+
+    if request.method == 'POST':
+        form = FormularioReserva(request.POST, instance=reserva)
+        if form.is_valid():
+            form.save()
+            return redirect('new_reserva')
+    else:
+        form = FormularioReserva(instance=reserva)
+
+    reservas = Reserva.objects.filter(usuario=request.user)
+
+    return render(request, 'reservar.html', {'form': form, 'reservas': reservas})
+
+
+def eliminar_reserva(request, id):
+    if not request.user.is_authenticated:
+        return redirect('log_in_page')
+
+    empleado_reserva = Reserva.objects.filter(id=id)
+
+    if len(empleado_reserva) != 0:
+        empleado_reserva[0].delete()
+        return redirect('new_reserva')
 
 def go_login(request):
     return render(request, 'log-in.html')
@@ -187,9 +277,9 @@ def log_in(request):
                 if usuario is not None:
                     login(request, usuario)
                     if usuario.rol == 'administrador':
-                        return redirect('empleados') 
+                        return redirect('empleados')
                     else:
-                        return redirect('inicio') 
+                        return redirect('inicio')
 
     return render(request, 'log-in.html', {'registro_form': registro_form,'login_form': login_form})
 
@@ -234,7 +324,7 @@ def editar_perfil(request):
     if request.method == 'POST':
         form = FormularioEditarPerfil(request.POST, instance=request.user)
         if form.is_valid():
-            form.save() 
+            form.save()
             return redirect('home')
     else:
         form = FormularioEditarPerfil(instance=request.user)

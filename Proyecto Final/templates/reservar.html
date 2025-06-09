@@ -7,7 +7,7 @@
         <input type="file" id="input-foto" name="foto" accept="image/*" onchange="document.getElementById('form-foto').submit();">
     </form>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" style="background-image: url('/static/images/fondo1.png'); background-size: cover;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" style="background-image: url('/static/images/fondo_reserva.png'); background-size: cover;">
         <div class="container-fluid">
             <!-- Logo -->
             <a class="navbar-brand" href="{% url 'home' %}">
@@ -27,9 +27,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white fs-5" href="{% url 'carta' %}">CARTA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fs-5" href="{% url 'new_reserva' %}">RESERVAR</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white fs-5" href="{% url 'contacto' %}">CONTACTO</a>
@@ -60,10 +57,8 @@
                 <a href="{% url 'carta' %}" class="btn btn-danger navbar">HAZ TU PEDIDO</a>
             </div>
         </div>
-        <div class="presentacion">
-            <h1>Ristorante Ramos</h1>
-            <h2>Verdadera Cocina Italiana en el Centro de Sevilla</h2>
-            <p>Honramos la tradición culinaria mientras innovamos con cada plato. Elaboramos nuestras recetas de forma artesanal, con ingredientes frescos y técnicas clásicas, para ofrecer una experiencia auténtica e inigualable.</p>
+        <div class="presentacion_mod">
+            <h1>RESERVAR</h1>
         </div>
     </nav>
     
@@ -153,7 +148,7 @@
       </div>
     </div>
     
-    <div class="anadir_producto">
+    <div class="anadir_producto" style="padding-bottom: 2%">
         <div class="mod_art">
             <p>Hacer Reserva</p>
         </div>
@@ -187,21 +182,26 @@
     <section class="formulario">
             <h2 class="titulo">Tus Reservas</h2>
             <p>En nombre de nuestro restaurante, queremos agradecerte por tu interés por compartir tu opinión. Estamos encantados de responder a tus recomendaciones y recibir tus comentarios.</p>
-            <div class="formulario_resena">
+            <div class="formulario_reserva">
                 {% if reservas %}
                     {% for r in reservas %}
-                        <div class="ver_resena">
-                            <p>{{ r.usuario.nombre }}</p>
-                            <p>{{ r.fecha_reserva }}</p>
-                            <p> {{ r.hora_reserva }}</p>
-                            <p> {{ r.numero_personas }}</p>
-                            <a href="{% url 'edit_reserva' id=r.id %}">
-                                <button class="editar_empleado_btn"><img src="{% static 'images/editar_Admin.png' %}"></button>
-                            </a>
-                                    
-                            <a href="{% url 'eliminar_reserva' id=r.id %}">
-                                <button class="eliminar_empleado_btn"><img src="{% static 'images/borrar_Admin.png' %}"></button>
-                            </a>
+                        <div class="ver_reserva">
+                            <p class="ver_reserva_nombre">{{ r.usuario.nombre }}</p>
+                            <p class="ver_reserva_campo">Fecha de la reserva : {{ r.fecha_reserva }}</p>
+                            <p class="ver_reserva_campo">Hora de la reserva : {{ r.hora_reserva }}</p>
+                            <p class="ver_reserva_campo">Num. de personas : {{ r.numero_personas }}</p>
+                            
+                            <a href="{% url 'new_parking' %}" class="btn btn-danger reservar-parking" style="margin-bottom: 5%">RESERVAR PARKING</a>
+                            
+                            <div class="reserva_botones">
+                                <a href="{% url 'edit_reserva' id=r.id %}">
+                                    <button class="reserva_botones_editar"><img src="{% static 'images/editar_Admin.png' %}"></button>
+                                </a>
+                                        
+                                <a href="{% url 'eliminar_reserva' id=r.id %}">
+                                    <button class="reserva_botones_editar"><img src="{% static 'images/borrar_Admin.png' %}"></button>
+                                </a>
+                            </div>
                         </div>
                     {% endfor %}
                 {% else %}
@@ -211,4 +211,5 @@
         </section>
     
     {% include 'footer.html' %}
+    
 {% endblock %}

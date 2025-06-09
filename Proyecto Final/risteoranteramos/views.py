@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.core.exceptions import PermissionDenied
 from django.db import connection
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from unicodedata import decimal
 from django.views.decorators.http import require_POST
@@ -140,6 +141,72 @@ def eliminar_reserva(request, id):
     if len(empleado_reserva) != 0:
         empleado_reserva[0].delete()
         return redirect('new_reserva')
+
+def new_parking(request):
+    parkings = Parking.objects.filter(usuario=request.user) if request.user.is_authenticated else []
+    alerta = None
+
+    existe_parking = Parking.objects.filter(usuario=request.user).exists()
+
+    if request.method == 'POST':
+        if existe_parking:
+            alerta = "Solo puedes tener una reserva de parking activa."
+            form = FormularioParking()  # <-- aquí creamos el form igual, para evitar el error
+        else:
+            form = FormularioParking(request.POST)
+            if form.is_valid():
+                nueva_parking = form.save(commit=False)
+                nueva_parking.usuario = request.user
+                nueva_parking.save()
+                return redirect('new_parking')
+    else:
+        form = FormularioParking()
+
+    return render(request, 'parking.html', {'form': form, 'parkings': parkings, 'alerta': alerta})
+
+def edit_parking(request, id):
+    if not request.user.is_authenticated:
+        return redirect('log_in_page')
+
+    parking = get_object_or_404(Parking, id=id)
+
+    if request.method == 'POST':
+        form = FormularioParking(request.POST, instance=parking)
+        if form.is_valid():
+            form.save()
+            return redirect('new_parking')
+    else:
+        form = FormularioParking(instance=parking)
+
+    return render(request, 'parking.html', {'form': form})
+
+def eliminar_parking(request, id):
+    if not request.user.is_authenticated:
+        return redirect('log_in_page')
+
+    eliminar_parking = Parking.objects.filter(id=id)
+
+    if len(eliminar_parking) != 0:
+        eliminar_parking[0].delete()
+        return redirect('new_parking')
+
+def new_tarjeta(request,):
+    if not request.user.is_authenticated:
+        return redirect('log_in_page')
+
+    tarjetas = Tarjeta.objects.filter(usuario=request.user) if request.user.is_authenticated else []
+
+    if request.method == 'POST':
+        form = FormularioTarjeta(request.POST)
+        if form.is_valid():
+            nueva_reserva = form.save(commit=False)
+            nueva_reserva.usuario = request.user
+            nueva_reserva.save()
+            return redirect('home')
+    else:
+        form = FormularioTarjeta()
+
+    return render(request, 'tarjeta_credito.html', {'form': form, 'tarjetas': tarjetas})
 
 def go_login(request):
     return render(request, 'log-in.html')

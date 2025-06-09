@@ -149,14 +149,29 @@ class Resena(models.Model):
     fecha_creacion = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     fecha_modificacion = models.DateTimeField(auto_now=True, null=True, blank=True)
 
-def get_current_time():
-    now = datetime.datetime.now()
-    return now.replace(second=0, microsecond=0).time()
-
 class Reserva(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    fecha_reserva = models.DateField(editable=True, default=datetime.date.today)
-    hora_reserva = models.TimeField(editable=True, default=get_current_time)
+    fecha_reserva = models.DateField(editable=True)
+    hora_reserva = models.TimeField(editable=True)
     numero_personas = models.IntegerField(default=1)
     fecha_creacion = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    estado = models.CharField(max_length=20, choices=[('pendiente', 'Pendiente'), ('realizado', 'Realizado')], default='pendiente')
 
+class Parking(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    horas_parking_llegada = models.TimeField(editable=True)
+    horas_parking_salida = models.TimeField(editable=True)
+    num_coches = models.IntegerField(default=1)
+
+TIPO_TARJETA = (
+    ('MASTERCARD', 'Mastercard'),
+    ('VISA', 'Visa'),
+    ('AMEX', 'Amex'),
+)
+
+class Tarjeta(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    num_tarjeta = models.CharField(max_length=16)
+    fecha_caducidad = models.TimeField(editable=True)
+    tipo_tarjeta = models.CharField(max_length=20, choices=TIPO_TARJETA, default='MASTERCARD')
+    cvv = models.CharField(max_length=3)

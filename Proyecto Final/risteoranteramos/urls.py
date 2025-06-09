@@ -26,6 +26,9 @@ urlpatterns = [
     path('newReserva', new_reserva, name='new_reserva'),
     path('newReserva/<int:id>', edit_reserva, name='edit_reserva'),
     path('eliminarReserva/<int:id>', eliminar_reserva, name='eliminar_reserva'),
+    path('newParking', new_parking, name='new_parking'),
+    path('newParking/<int:id>', edit_parking, name='edit_parking'),
+    path('eliminarParking/<int:id>', eliminar_parking, name='eliminar_parking'),
     path('log-in/', log_in, name='log_in_page'),
     path('login/', go_login, name='login'),
     path('reporte/', go_reporte_ventas, name='reporte'),
@@ -49,4 +52,5 @@ urlpatterns = [
     path('actualizar_estado_mesa/<int:id>/', actualizar_estado_mesa, name='actualizar_estado_mesa'),
     path('actualizar_estado_pedido/<int:id>', actualizar_estado_pedido, name='actualizar_estado_pedido'),
     path('pagar_pedido/<int:pedido_id>', pagar_pedido, name='pagar_pedido'),
+    path('newTarjeta', new_tarjeta, name='new_tarjeta'),
 ]

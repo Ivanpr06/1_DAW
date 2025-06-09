@@ -1,0 +1,14 @@
+.parking_content{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.ver_parking{
+    background-color: white;
+    border: 1px solid #D4A373;
+    border-radius: 20px;
+    padding: 5%;
+    width: 350px;
+    font-family: "Instrument Serif", serif;
+}

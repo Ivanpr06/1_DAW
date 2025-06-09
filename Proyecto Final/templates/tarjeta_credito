@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <form id="form-foto" method="POST" enctype="multipart/form-data" action="{% url 'actualizar_foto' %}" style="display: none;">
+        {% csrf_token %}
+        <input type="file" id="input-foto" name="foto" accept="image/*" onchange="document.getElementById('form-foto').submit();">
+    </form>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" style="background-image: url('/static/images/fondo1.png'); background-size: cover;">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="150" height="150">
+            </a>
+        
+            <!-- Menú colapsable -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <!-- Enlaces -->
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'home' %}">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'carta' %}">CARTA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'new_reserva' %}">RESERVAR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'contacto' %}">CONTACTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="{% url 'acerca_de' %}">ACERCA DE</a>
+                    </li>
+                </ul>
+            </div>
+        
+              <!-- Botones -->
+            <div class="d-flex">
+                {% if user.is_authenticated %}
+                    <a href="#" class="btn d-flex align-items-center text-light p-0 border-0 bg-transparent cuenta"
+                       data-bs-toggle="modal" data-bs-target="#perfilModal">
+                        {% if user.foto %}
+                            <img src="{{ user.foto.url }}" alt="Foto de perfil" class="rounded-circle me-2" style="width: 35px; height: 35px; object-fit: cover;">
+                        {% else %}
+                        <i class="bi bi-person-circle fs-4 me-2"></i>
+                        {% endif %}
+                        <span>{{ user.nombre }}</span>
+                    </a>
+                {% else %}
+                <a href="{% url 'log_in_page' %}" class="btn btn-outline-light me-2 d-flex align-items-center navbar">
+                    <i class="bi bi-person-fill me-1"></i> CLIENTE
+                </a>
+                {% endif %}
+                <a href="{% url 'carta' %}" class="btn btn-danger navbar">HAZ TU PEDIDO</a>
+            </div>
+        </div>
+        <div class="presentacion">
+            <h1>Ristorante Ramos</h1>
+            <h2>Verdadera Cocina Italiana en el Centro de Sevilla</h2>
+            <p>Honramos la tradición culinaria mientras innovamos con cada plato. Elaboramos nuestras recetas de forma artesanal, con ingredientes frescos y técnicas clásicas, para ofrecer una experiencia auténtica e inigualable.</p>
+        </div>
+    </nav>
+    
+    <!-- Modal para mostrar y editar el perfil -->
+    <div class="modal fade" id="editarPerfilModal" tabindex="-1" aria-labelledby="editarPerfilModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editarPerfilModalLabel">Editar Perfil</h5>
+              <button type="button" class="btn-close" id="cerrarEditarPerfilBtn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="{% url 'editar_perfil' %}">
+              {% csrf_token %}
+              
+              <!-- Campos del formulario -->
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ user.nombre }}">
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" value="{{ user.telefono }}">
+              </div>
+              <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccion" name="direccion" value="{{ user.direccion }}">
+              </div>
+              
+              <!-- Botón para guardar cambios -->
+              <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                
+              <button type="submit" class="btn btn-primary">Datos Tarjeta</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="cerrarFooterEditarPerfilBtn" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal para mostrar el perfil del usuario -->
+    <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark">
+          <div class="modal-header">
+            <h5 class="modal-title" id="perfilModalLabel">Perfil del Usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <!-- BOTÓN FOTO PERFIL -->
+            <button class="btn p-0 border-0 bg-transparent" onclick="document.getElementById('input-foto').click();">
+              {% if user.foto %}
+                <img src="{{ user.foto.url }}" alt="Foto de perfil" id="preview-foto"
+                     class="rounded-circle me-2" style="width: 250px; height: 250px; object-fit: cover;">
+              {% else %}
+                <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                     style="width: 250px; height: 250px;">
+                  <i class="bi bi-camera text-white"></i>
+                </div>
+              {% endif %}
+            </button>
+            <p><strong>Nombre:</strong> {{ user.nombre }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Teléfono:</strong> {{ user.telefono }}</p>
+            <p><strong>Dirección:</strong> {{ user.direccion }}</p>
+          
+            {% if user.rol == 'administrador' %}
+            <a href="{% url 'empleados' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Administrador</a>
+            {% endif %}
+            
+            {% if user.rol == 'cocinero' or user.rol == 'administrador' %}
+            <a href="{% url 'cocinero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Cocinero</a>
+            {% endif %}
+            
+            {% if user.rol == 'camarero' or user.rol == 'administrador' %}
+            <a href="{% url 'camarero' %}" class="btn btn-outline-light me-2 d-flex align-items-center pop-up">Camarero</a>
+            {% endif %}
+    
+            <a href="{% url 'logout' %}" class="btn btn-danger logout">Cerrar sesión</a>
+          </div>
+          <div class="modal-footer">
+            <!-- Botón para abrir el modal de editar y cerrar el modal actual -->
+            <button href="#" data-bs-toggle="modal" data-bs-target="#editarPerfilModal" data-bs-dismiss="modal" class="btn btn-warning logout">Editar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {% if tarjetas.exists %}
+        <div class="mod_art">
+                <p style="text-align: center; padding: 3%">Tu Método Anterior de Pago</p>
+        </div>
+        
+        <section class="formulario" style="padding: 0; margin-bottom: 5%">
+            <div class="formulario_reserva">
+                {% if tarjetas %}
+                    {% for t in tarjetas %}
+                        <div class="ver_reserva">
+                            <p class="ver_reserva_nombre">{{ t.usuario.nombre }}</p>
+                            <p class="ver_reserva_campo">Num. de Tarjeta : {{ t.num_tarjeta }}</p>
+                            <p class="ver_reserva_campo">Fecha de Caducidad : {{ t.fecha_caducidad }}</p>
+                            <p class="ver_reserva_campo">Tipo de Tarjeta : {{ t.tipo_tarjeta }}</p>
+                            <p class="ver_reserva_campo">CVV : {{ t.cvv }}</p>
+                            
+                            <a href="{% url 'completar_compra' %}" class="btn btn-danger reservar-parking" style="margin-bottom: 5%">TERMINAR COMPRA</a>
+                            
+                            <div class="reserva_botones">
+                                <a href="{% url 'edit_tarjeta' id=t.id %}">
+                                    <button class="reserva_botones_editar"><img src="{% static 'images/editar_Admin.png' %}"></button>
+                                </a>
+                                        
+                                <a href="{% url 'eliminar_tarjeta' id=t.id %}">
+                                    <button class="reserva_botones_editar"><img src="{% static 'images/borrar_Admin.png' %}"></button>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </section>
+    {% else %}
+        <div class="anadir_producto" style="padding-bottom: 2%" >
+            <div class="mod_art">
+                <p style="text-align: center; padding: 3%">Introduzca Su Tarjeta De Crédito </p>
+            </div>
+            <div class="formulario_anadir" style="padding: 3.5%; margin-bottom: 5%; text-align: center">
+                <form method="post">
+                    {% csrf_token %}
+        
+                    <div class="form-floating campo">
+                        {{ form.num_tarjeta }}
+                        <label>Num. de Tarjeta</label>
+                    </div>
+        
+                    <div class="form-floating campo">
+                        {{ form.fecha_caducidad }}
+                        <label>Fecha de Caducidad</label>
+                    </div>
+        
+                    <div class="form-floating campo">
+                        {{ form.tipo_tarjeta }}
+                        <label>Tipo de Tarjeta</label>
+                    </div>
+                    
+                    <div class="form-floating campo">
+                        {{ form.cvv }}
+                        <label>CVV</label>
+                    </div>
+                    
+                    <div class="boton_conf">
+                        <a href="{% url 'completar_compra' %}"></a><button type="submit">CONFIRMAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endif %} 
+    
+    {% include 'footer.html' %}
+{% endblock %}

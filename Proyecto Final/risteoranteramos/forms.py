@@ -98,6 +98,32 @@ class FormularioResena(forms.ModelForm):
             })
         }
 
+class FormularioParking(forms.ModelForm):
+    class Meta:
+        model = Parking
+        fields = ['num_coches', 'horas_parking_llegada', 'horas_parking_salida']
+        widgets = {
+            'num_coches': forms.NumberInput(attrs={
+                'class': 'form-control',
+                'required': 'required',
+                'min': '0',
+                'max': '5',
+            }),
+            'horas_parking_llegada': forms.TimeInput(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                    'type': 'time',
+            }),
+            'horas_parking_salida': forms.TimeInput(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                    'type': 'time',
+                }),
+
+        }
+
 class FormularioReserva(forms.ModelForm):
     class Meta:
         model = Reserva
@@ -108,9 +134,7 @@ class FormularioReserva(forms.ModelForm):
                     'class': 'form-control',
                     'required': 'required',
                     'type': 'date',
-                },
-                format='%Y-%m-%d'
-            ),
+                }),
             'hora_reserva': forms.TimeInput(
                 attrs={
                     'class': 'form-control',
@@ -125,11 +149,33 @@ class FormularioReserva(forms.ModelForm):
             }),
         }
 
-def __init__(self, *args, **kwargs):
-    super().__init__(*args, **kwargs)
-    today = datetime.date.today()
-    self.fields['fecha_reserva'].initial = today
-    self.fields['fecha_reserva'].widget.attrs['value'] = today.strftime('%Y-%m-%d')
+class FormularioTarjeta(forms.ModelForm):
+    class Meta:
+        model = Tarjeta
+        fields = ['num_tarjeta', 'fecha_caducidad', 'tipo_tarjeta', 'cvv']
+        widgets = {
+            'num_tarjeta': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                    'pattern': '[0-9]{16}',
+                }),
+            'fecha_caducidad': forms.TimeInput(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                    'type': 'time',
+                }),
+            'tipo_tarjeta': forms.Select(attrs={
+                'class': 'form-select'
+            }),
+            'cvv': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                    'pattern': '[0-9]{3}',
+                }),
+        }
 
 class RegistroFormulario(forms.ModelForm):
     password = forms.CharField(

@@ -24,8 +24,30 @@
       <li><h4>📂 Sistemas Informáticos</h4>
       <p>In Sistemas Informáticos, you can find varied information about many aspects of programming, such as Ubuntu, binary code, and the components of a PC. 🖥</p>
       </li>
-  </ul>
-  
-##
+      <li><h4>📂 Proyecto Final</h4>
+      <p><b>Ristorannte Ramos</b> is a website developed with <b>Django</b>, simulating the official site of a fictional restaurant. This project was created for educational purposes, applying both backend and frontend web development skills, as well as concepts such as design, routing, data models, and user authentication. 🍝</p>
+        <h6>The website includes features such as:</h6>
+        <ul>
+          <li>Viewing the restaurant menu</li>
+          <li>Online reservations</li>
+          <li>Admin panel</li>
+          <li>User registration and login</li>
+          <li>Product and order management</li>
+        </ul>
+
+  <h4>🧑‍🍳 Equipo de desarrollo</h4>
+
+  <h6>This project was developed by the following members:</h6>
+
+- [Maria Arteaga Ramos](https://github.com/mariaartt)
+- [Iván Ramos Villegas](https://github.com/ivanramoss-safa)
+- [Iván Ponti Rubio](https://github.com/Ivanpr06)
+
+ <h6>Mockup</h6>
+ <p>https://www.figma.com/design/G54LIUELgbIhtY44jbYcoC/ProyectoRestaurante?node-id=0-1&t=32FAD7utovwNr0hZ-1</p>
+ 
+  </li>
+</ul>
+
 
 
